@@ -255,6 +255,11 @@ body {
   opacity: 0;
 }
 
+/* Balanced heading wrapping */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
 /* Focus visible ring — replaces outline:none default */
 :focus-visible {
   outline: 2px solid #0050FF;

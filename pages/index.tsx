@@ -86,7 +86,7 @@ function GradientText({ children }: { children: ReactNode }) {
 function SectionHeading({ title, description, className = '' }: { title: string; description?: string; className?: string }) {
   return (
     <div className={`text-center ${className}`}>
-      <h2 className="text-4xl md:text-5xl font-medium text-[#1A1A2E] tracking-[-0.03em] leading-[1.15]">
+      <h2 className="text-4xl md:text-5xl font-semibold text-[#1A1A2E] tracking-[-0.03em] leading-[1.15]">
         {title}
       </h2>
       {description && (
@@ -280,7 +280,7 @@ export default function HomePage() {
             </div>
 
             {/* Heading */}
-            <h1 className="animate-fade-in-up animation-delay-100 text-5xl md:text-[68px] lg:text-[72px] font-medium leading-[1.1] tracking-[-0.04em] text-[#1A1A2E] max-w-[900px]">
+            <h1 className="animate-fade-in-up animation-delay-100 text-5xl md:text-[68px] lg:text-[72px] font-bold leading-[1.1] tracking-[-0.04em] text-[#1A1A2E] max-w-[900px]">
               {(() => {
                 const parts = hero.title.split(hero.highlight);
                 return (
@@ -774,7 +774,7 @@ export default function HomePage() {
               />
 
               <div className="relative z-10 text-center">
-                <h2 className="text-4xl md:text-5xl font-medium text-[#1A1A2E] tracking-[-0.03em] leading-[1.15] max-w-2xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-semibold text-[#1A1A2E] tracking-[-0.03em] leading-[1.15] max-w-2xl mx-auto">
                   {contactSection.title}
                 </h2>
                 <p className="mt-4 text-base text-[#64748B] leading-[1.6] tracking-[-0.015em] max-w-xl mx-auto">
