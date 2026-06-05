@@ -18,7 +18,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: https:",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com",
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.google.com https://www.googletagmanager.com",
       "frame-ancestors 'self'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -51,9 +51,7 @@ const nextConfig: NextConfig = {
       { source: "/home",       destination: "/", permanent: true },
       { source: "/index",      destination: "/", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },
-      // Legacy privacy/terms paths → canonical with trailing slash
-      { source: "/privacy",    destination: "/privacy", permanent: false },
-      { source: "/terms",      destination: "/terms",   permanent: false },
+      // No self-redirects needed — pages render at these paths directly
     ];
   },
 
