@@ -269,15 +269,24 @@ export default function Document() {
         {/* <meta name="google-site-verification" content="INSERT_GSC_TOKEN" /> */}
         {/* <meta name="msvalidate.01" content="INSERT_BING_TOKEN" /> */}
 
-        {/* ── GTM (async, non-blocking) ────────────────────────── */}
-        {/* Replace GTM-XXXXXXX with real container ID */}
-        {/*
+        {/* ── Google Analytics 4 — G-DSJJ1QQFXY ──────────────── */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DSJJ1QQFXY"
+        />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-DSJJ1QQFXY', {
+                page_path: window.location.pathname,
+                send_page_view: true
+              });
+            `,
           }}
         />
-        */}
 
         {/* ── JSON-LD: Organisation + WebSite + TravelAgency + FAQ + HowTo ── */}
         <script
