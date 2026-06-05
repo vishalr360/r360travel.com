@@ -953,8 +953,8 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-10 md:gap-16 pb-10 border-b border-gray-100">
               {/* Brand */}
               <div className="max-w-xs">
-                <a href="#top" className="inline-block mb-4">
-                  <img src="/tripsure_logo.svg" alt="Tripsure — Book Hotels & Flights, Earn Points" className="h-[42px] w-[157px] object-contain object-left" />
+                <a href="#top" className="inline-flex items-center mb-4 min-h-[44px]">
+                  <img src="/tripsure_logo.svg" alt="Tripsure — Book Hotels & Flights, Earn Points" className="h-[32px] w-auto object-contain object-left" />
                 </a>
                 <p className="text-sm text-[#64748B] leading-[1.6] tracking-[-0.01em]">
                   {footer.tagline}
