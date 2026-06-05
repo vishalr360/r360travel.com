@@ -308,7 +308,7 @@ export default function HomePage() {
               </a>
               <a
                 href={hero.secondaryCta.href}
-                className="px-6 py-4 rounded-full text-base font-medium tracking-[-0.015em] border border-[#FF5B24] text-[#1A1A2E] hover:bg-orange-50 transition-colors"
+                className="px-6 py-4 rounded-[8px] text-base font-medium tracking-[-0.015em] border border-[#FF5B24] text-[#1A1A2E] hover:bg-orange-50 transition-colors"
               >
                 {hero.secondaryCta.label}
               </a>
