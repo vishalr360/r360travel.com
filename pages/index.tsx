@@ -1027,9 +1027,9 @@ export default function HomePage() {
         </main>{/* ── END MAIN CONTENT ─────────────────────────────── */}
 
         {/* ── FOOTER ──────────────────────────────────────────── */}
-        <footer className="bg-white border-t border-gray-100 pt-14 pb-8">
+        <footer className="bg-white border-t border-gray-100 pt-10 pb-8">
           <div className="mx-auto max-w-[1100px] px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-10 md:gap-16 pb-10 border-b border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-8 md:gap-12 pb-8 border-b border-gray-100">
               {/* Brand */}
               <div className="max-w-xs">
                 <a href="#top" className="inline-flex items-center mb-4 min-h-[44px]">
@@ -1071,15 +1071,15 @@ export default function HomePage() {
 
               {/* Link columns */}
               {footer.columns.map((col) => (
-                <div key={col.heading} className="flex flex-col gap-3">
-                  <p className="text-sm font-semibold text-[#1A1A2E] tracking-[-0.01em]">
+                <div key={col.heading} className="flex flex-col gap-2">
+                  <p className="text-sm font-semibold text-[#1A1A2E] tracking-[-0.01em] mb-1">
                     {col.heading}
                   </p>
                   {col.links.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
-                      className="text-sm text-[#64748B] hover:text-[#1A1A2E] transition-colors tracking-[-0.01em] py-1 inline-block min-h-[44px] flex items-center"
+                      className="text-sm text-[#64748B] hover:text-[#1A1A2E] transition-colors tracking-[-0.01em] py-1.5 block"
                     >
                       {link.label}
                     </a>
