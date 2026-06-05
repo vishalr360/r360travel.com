@@ -507,7 +507,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Platform card */}
               <div className="bg-[#fcfcfc] rounded-[16px] border border-[#f1edff] p-8 flex flex-col gap-4 card-hover">
-                <IconBox gradient="#FF5B24 0%, #FF8C5A 100%" src="/icon-platform.png" />
+                <IconBox gradient="#FF5B24 0%, #FF8C5A 100%" src="/icon-platform.svg" />
                 <p className="text-xs font-semibold tracking-widest text-[#ed8a38] uppercase">
                   {productSection.techCard.kicker}
                 </p>
@@ -528,7 +528,7 @@ export default function HomePage() {
 
               {/* Business outcomes card */}
               <div className="bg-[#fcfcfc] rounded-[16px] border border-[#f1edff] p-8 flex flex-col gap-4 card-hover">
-                <IconBox gradient="#0050FF 0%, #6B8FFF 100%" src="/icon-bank.png" />
+                <IconBox gradient="#0050FF 0%, #6B8FFF 100%" src="/icon-bank.svg" />
                 <p className="text-xs font-semibold tracking-widest text-[#ed8a38] uppercase">
                   {productSection.experienceCard.kicker}
                 </p>
