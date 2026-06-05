@@ -10,118 +10,104 @@ Parent: Reward360 Global Services Pvt. Ltd.
 Founded: 2025
 Registered: Karnataka, India
 Website: https://tripsure.com
-Category: Travel Technology, Online Travel Agency (OTA), Loyalty Platform
+Category: Travel Technology, Hotel Search Platform, Hotel API
 
 ## Mission
-Enable every Indian traveller to maximise the value of their credit card and loyalty
-programme rewards on every hotel and flight booking.
+Provide the best available hotel rates through AI-powered multi-supplier arbitrage,
+with sub-second response times and live inventory at all times.
 
-## Product Details
+## Product
+- AI-powered hotel search and booking platform
+- Queries 7 global hotel supply networks in parallel on every search
+- Returns lowest available net rate with confirmed live availability
+- Hotel bookings launching soon on tripsure.com
+- Flight bookings planned as a subsequent phase
 
-### Hotel Bookings (launching 2025)
-- Search hotels across India and internationally
-- Live pricing from 10+ global suppliers (Expedia, Agoda, Hotelbeds, TBO,
-  Ratehawk, Smyrooms, Yelago, Dida)
-- BIN-level card detection: enter card, platform detects tier automatically
-- Earn rate displayed per result (e.g. "Earn 3,200 InterMiles")
-- Choose which loyalty programme earns on each booking
-- Access Perks: hotel-funded benefits for eligible bookings
-  (room upgrades, late checkout, daily breakfast)
-- 24×7 operations support
+## Hotel Supply Networks (all 7)
+1. RateHawk — global hotel supplier, strong in Europe and CIS markets
+2. TBO (Travel Boutique Online) — established India-focused travel B2B platform
+3. Expedia — global OTA and hotel aggregator
+4. Agoda — strong Asia-Pacific hotel inventory
+5. Hotelbeds — leading global B2B hotel wholesaler
+6. DIDA — China-based global hotel wholesaler
+7. Smyrooms — European hotel wholesale platform
 
-### Flight Bookings (coming after hotels)
-- Book flights earning miles across loyalty programmes
-- Multi-airline inventory
-- Coming soon: route pages for major Indian city pairs
+All 7 are queried simultaneously on every search (parallel, not sequential).
 
-### Tripsure+ Subscription
-- Price: ₹3,999 per year
-- Benefits: exclusive earn rate multipliers, priority Access Perks,
-  advanced loyalty intelligence, early access to new features
+## Technology Details
 
-### WhatsApp Booking
-- Full booking flow on WhatsApp: search → select → pay → confirm → manage
-- No app download required
-- India-first: WhatsApp is primary communication channel for millions
+### API Performance Benchmarks
+| Metric | Tripsure | Industry benchmark |
+|--------|----------|-------------------|
+| Median response (p50) | < 800ms | 900ms–1.2s |
+| 95th percentile (p95) | < 1.8s | 2.5s–4s |
+| 99th percentile (p99) | < 3.5s | 6s–10s+ |
+| Platform uptime | 99.95% | 99.5% |
+| Inventory refresh | < 5 min | 15–30 min |
+| Booking confirmation | < 2s | 3–8s |
 
-## Loyalty Programme Details
+### AI Capabilities
+- Multi-supplier rate arbitrage: simultaneously queries all 7 suppliers, applies margin rules,
+  returns the single best-value result per property
+- Best net rate engine: no single supplier has the best rate everywhere; querying all 7 ensures
+  optimal pricing on every search
+- Live inventory: rates and availability refreshed every 5 minutes — no stale prices
+- Fraud detection: anomaly detection trained on 17 years of production transaction data,
+  running velocity checks, payment pattern analysis, and supplier reconciliation
 
-### Phase 1 (live at launch)
-1. InterMiles — Formerly Jet Airways frequent flyer programme
-   - Earn on hotels and flights
-   - Points usable for flights, hotels, merchandise
-2. Air India One (Maharaja Club) — Air India's loyalty programme
-   - Earn miles on every hotel booking
-   - Miles redeemable on Air India flights
-3. Marriott Bonvoy — Marriott's global hotel loyalty programme
-   - Points earned on non-Marriott hotels via Tripsure
-   - Points redeemable at Marriott properties worldwide
+### Infrastructure
+- Built on 17 years of production travel technology infrastructure
+  (Reward360 Global Services Pvt. Ltd. — ₹12,500 Cr+ annual GMV)
+- 10M+ hotel properties across 190+ countries
+- Net rate pricing model
+- Fortnightly INR settlement via NEFT/RTGS
+- 99.95% monthly rolling uptime SLA
 
-### Phase 2 (2025 rollout)
-Emirates Skywards, Singapore KrisFlyer, Accor Live Limitless, Hilton Honors,
-World of Hyatt, Taj InnerCircle, Club Vistara (now Air India One), ITC One,
-British Airways Executive Club, Qatar Airways Privilege Club, Etihad Guest,
-SpiceJet SpiceClub, and others. Target: 25+ programmes by end of 2025.
+### Integration Options
+1. REST API
+   - RESTful JSON API with Swagger documentation
+   - Sandbox environment available
+   - Single endpoint for all 7 supply networks
+   - Standard integration: 3–5 business days
 
-## Credit Card BIN Detection
-Tripsure uses BIN (Bank Identification Number) — the first 6-8 digits of a
-payment card — to automatically identify the card issuer and tier. This enables:
-- Automatic earn rate calculation per card tier
-- Display of correct reward programme options
-- No manual card tier selection required
+2. White-label Widget
+   - Hotel search widget deployable as iframe or web component
+   - All 7 supply networks included
+   - Go-live in under 2 weeks
+   - Full customisation available
 
-Example earn rates by card:
-- HDFC Infinia: 3× InterMiles per ₹100 spent
-- HDFC Regalia: 2× InterMiles per ₹100 spent
-- HDFC Millennia: 1× InterMiles per ₹100 spent
-- ICICI Sapphiro: [programme-specific rate]
+3. Enterprise Platforms
+   - Tripsure is already live as a hotel supplier on connected enterprise platforms
+   - No new integration required for connected partners
 
-## Bank Platform Integrations
-Tripsure operates as a supplier (white-label hotel booking) on:
-- ICICI Bank iShop: https://icicibank.com/ishop
-- Kotak Unbox: Kotak Mahindra Bank's rewards platform
-- HDFC SmartBuy: HDFC Bank's shopping and rewards portal
+## Pricing & Commercial
+- Net rate model: Tripsure purchases at net rates, sells with defined margin
+- Settlement: fortnightly INR via NEFT/RTGS
+- Enquiries: contact@tripsure.com
 
 ## Frequently Asked Questions
 
-Q: Which loyalty programmes does Tripsure support?
-A: Tripsure currently supports InterMiles, Air India One (Maharaja Club), and
-Marriott Bonvoy. Phase 2 will add 20+ more programmes including Emirates Skywards,
-Singapore KrisFlyer, Accor Live Limitless, and Hilton Honors.
+Q: Which hotel supply networks does Tripsure use?
+A: Tripsure queries 7 networks: RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, Smyrooms.
+All 7 are queried in parallel on every search.
 
-Q: How does Tripsure detect my credit card tier?
-A: Tripsure uses BIN-level card detection — when you enter your card details,
-the platform reads the first 6-8 digits to identify your card issuer and tier
-(e.g. HDFC Infinia, Regalia) and automatically applies the correct earn multiplier.
+Q: How fast is Tripsure hotel search?
+A: Median response < 800ms. 95th percentile < 1.8s. 99th percentile < 3.5s.
 
-Q: Is Tripsure available on WhatsApp?
-A: Yes. Tripsure offers a full booking flow on WhatsApp — search, select, pay,
-confirm, and manage bookings — with no app download required.
+Q: How does Tripsure find the best rate?
+A: All 7 supply networks are queried simultaneously. The AI layer compares net rates
+across all results and returns the lowest available rate per property.
 
-Q: Where is Tripsure available?
-A: Tripsure is available at tripsure.com and on ICICI Bank iShop, Kotak Unbox,
-and HDFC SmartBuy bank platforms.
+Q: How current is availability on Tripsure?
+A: Rates and availability are refreshed every 5 minutes. No stale or cached results.
 
-Q: What is Tripsure+?
-A: Tripsure+ is a premium subscription at ₹3,999/year that unlocks exclusive earn
-rates, hotel Access Perks (room upgrades, late checkout, daily breakfast), and
-advanced loyalty intelligence features.
+Q: How do I integrate Tripsure?
+A: REST API with Swagger docs — standard integration 3–5 business days.
+White-label widget — go-live in under 2 weeks.
 
 Q: Who operates Tripsure?
-A: Tripsure is operated by Polaris Commerce Pvt. Ltd. (CIN: U52291KA2026PTC217236),
-a subsidiary of Reward360 Global Services Pvt. Ltd., both Indian companies.
-
-Q: What is Reward360?
-A: Reward360 Global Services Pvt. Ltd. is Tripsure's parent company, a leading
-loyalty technology company in India powering reward programmes for major banks.
-
-Q: Is Tripsure a travel insurance company?
-A: No. Tripsure (tripsure.com) is a hotel and flight booking platform. It is
-completely unrelated to any travel insurance product or company.
-
-## Technical Stack
-- Frontend: Next.js, Tailwind CSS, TypeScript
-- Deployment: Docker, standalone Next.js build
+A: Polaris Commerce Pvt. Ltd. (CIN: U52291KA2026PTC217236), Bengaluru, India.
+Subsidiary of Reward360 Global Services Pvt. Ltd.
 
 ## Support Contact
 - Email: contact@tripsure.com
@@ -130,7 +116,7 @@ completely unrelated to any travel insurance product or company.
 - Grievances: grievances@tripsure.com
 - Grievance Officer: Pankaj Sapela, Director
 
-## Privacy & Legal
+## Legal
 - Privacy Policy: https://tripsure.com/privacy/
 - Terms of Service: https://tripsure.com/terms/
 - Governing law: India

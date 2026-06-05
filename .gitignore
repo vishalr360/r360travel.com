@@ -40,3 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .gstack/
+LOGOS_FETCH_REPORT.md

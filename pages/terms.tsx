@@ -77,7 +77,7 @@ export default function TermsPage() {
                 <li>– Copy, reproduce, distribute, modify or commercially exploit any content on the Platform;</li>
                 <li>– Bypass or circumvent any security measures or access restrictions;</li>
                 <li>– Upload viruses, malware or any other malicious code;</li>
-                <li>– Abuse promotional offers, coupons, cashback, loyalty rewards or referral programmes; or</li>
+                <li>– Abuse promotional offers, coupons, cashback, or referral programmes; or</li>
                 <li>– Engage in abusive, threatening, unlawful or inappropriate conduct towards Tripsure staff, Suppliers or hotel personnel.</li>
               </ul>
             </section>
@@ -138,8 +138,8 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="mb-3 text-lg font-semibold text-[#1A1A2E]">12. Promotional Offers and Loyalty Programme</h2>
-              <p>Tripsure may offer promotional discounts, cashback, loyalty rewards, coupons, subscription benefits or partner offers from time to time. Such offers are subject to their own terms and conditions, may be modified or withdrawn without prior notice, and cannot be combined unless expressly permitted. Tripsure reserves the right to reverse or recover benefits incorrectly credited and to deny benefits where misuse or technical error is identified.</p>
+              <h2 className="mb-3 text-lg font-semibold text-[#1A1A2E]">12. Promotional Offers</h2>
+              <p>Tripsure may offer promotional discounts, cashback, coupons, subscription benefits or partner offers from time to time. Such offers are subject to their own terms and conditions, may be modified or withdrawn without prior notice, and cannot be combined unless expressly permitted. Tripsure reserves the right to reverse or recover benefits incorrectly credited and to deny benefits where misuse or technical error is identified.</p>
             </section>
 
             <section>
@@ -178,7 +178,7 @@ export default function TermsPage() {
 
             <section>
               <h2 className="mb-3 text-lg font-semibold text-[#1A1A2E]">18. Electronic Communications</h2>
-              <p>You agree that Tripsure may communicate with you electronically — by email, SMS, WhatsApp, in-app notification or by posting notices on the Platform — and that such communications satisfy any legal requirement that they be in writing, to the extent permitted by applicable law.</p>
+              <p>You agree that Tripsure may communicate with you electronically — by email, SMS, in-app notification or by posting notices on the Platform — and that such communications satisfy any legal requirement that they be in writing, to the extent permitted by applicable law.</p>
             </section>
 
             <section>

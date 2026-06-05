@@ -17,7 +17,7 @@ const organizationSchema = {
   },
   image: "https://tripsure.com/og-image.png",
   description:
-    "India's loyalty-native travel platform. Book hotels and flights and earn points across 25+ loyalty programmes — InterMiles, Air India One, Marriott Bonvoy and more.",
+    "AI-powered hotel search platform querying 7 global supply networks in parallel — RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms. Sub-800ms response, 10M+ properties.",
   foundingDate: "2025",
   foundingLocation: { "@type": "Place", name: "Bengaluru, Karnataka, India" },
   address: {
@@ -39,10 +39,6 @@ const organizationSchema = {
     "https://instagram.com/tripsureofficial",
     "https://linkedin.com/in/tripsure-social-97a800413",
   ],
-  parentOrganization: {
-    "@type": "Organization",
-    name: "Reward360 Global Services Pvt. Ltd.",
-  },
   identifier: {
     "@type": "PropertyValue",
     name: "CIN",
@@ -56,7 +52,7 @@ const webSiteSchema = {
   "@id": "https://tripsure.com/#website",
   name: "Tripsure",
   url: "https://tripsure.com",
-  description: "India's loyalty-native travel platform — book hotels & flights, earn points",
+  description: "AI-powered hotel technology platform — best rates from 7 supply networks",
   publisher: { "@id": "https://tripsure.com/#organization" },
   inLanguage: "en-IN",
   potentialAction: {
@@ -76,28 +72,31 @@ const travelAgencySchema = {
   name: "Tripsure",
   url: "https://tripsure.com",
   description:
-    "Book hotels and flights, earn loyalty points across 25+ programmes. India's loyalty-native OTA.",
-  areaServed: { "@type": "Country", name: "India" },
+    "AI-powered hotel search platform. Best available net rate from 7 global supply networks — RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, Smyrooms.",
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "Place", name: "Global" },
+  ],
   priceRange: "₹",
   paymentAccepted: "Credit Card, Debit Card, Net Banking, UPI",
   currenciesAccepted: "INR",
   openingHours: "Mo-Su 00:00-24:00",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Hotels and Flights",
+    name: "Hotel Search and Booking",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "LodgingBusiness",
-          name: "Hotel Bookings — Earn Loyalty Points",
+          name: "Hotel Bookings — Best Available Net Rate",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
-          "@type": "Flight",
-          name: "Flight Bookings — Earn Miles",
+          "@type": "Service",
+          name: "REST API — Single endpoint for all 7 supply networks",
         },
       },
     ],
@@ -110,42 +109,50 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Which loyalty programmes does Tripsure support?",
+      name: "Which hotel supply networks does Tripsure use?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tripsure currently supports InterMiles, Air India One (Maharaja Club), and Marriott Bonvoy, with 25+ programmes launching across 2025 including Emirates Skywards, Singapore KrisFlyer, Accor Live Limitless, Hilton Honors, World of Hyatt, Taj InnerCircle, and more.",
+        text: "Tripsure queries 7 supply networks simultaneously: RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms. All 7 are queried in parallel on every search to return the lowest available net rate.",
       },
     },
     {
       "@type": "Question",
-      name: "How does Tripsure detect my credit card tier?",
+      name: "How fast is Tripsure hotel search?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tripsure uses BIN-level card detection — when you enter your card details, the platform automatically identifies your card tier (e.g. HDFC Infinia, Regalia, Millennia) and applies the correct earn multiplier to every hotel and flight result.",
+        text: "Median search response is under 800ms. 95% of all searches complete in under 1.8 seconds. All 7 suppliers are queried simultaneously to achieve this speed.",
       },
     },
     {
       "@type": "Question",
-      name: "Is Tripsure available on WhatsApp?",
+      name: "How does Tripsure always show the best rate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Tripsure offers a full booking flow on WhatsApp — search, select, pay, confirm, and manage bookings — with no app download required.",
+        text: "No single supplier has the best rate on every property. Tripsure queries all 7 supply networks in parallel and uses an AI layer to compare net rates, returning the lowest available rate per property on every search.",
       },
     },
     {
       "@type": "Question",
-      name: "Where is Tripsure available?",
+      name: "How current is hotel availability on Tripsure?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tripsure is currently available on ICICI Bank iShop, Kotak Unbox, and HDFC SmartBuy bank platforms, and as a standalone website at tripsure.com.",
+        text: "Rates and availability are refreshed every 5 minutes across all 7 supplier connections. What you see on Tripsure is confirmed live inventory — not cached or estimated availability.",
       },
     },
     {
       "@type": "Question",
-      name: "What is Tripsure+?",
+      name: "How can I integrate Tripsure into my platform?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tripsure+ is a premium subscription at ₹3,999/year that unlocks exclusive earn rates, hotel Access Perks (room upgrades, late checkout, daily breakfast), and advanced loyalty intelligence features.",
+        text: "Tripsure offers a REST API with Swagger documentation and a sandbox environment. Standard integration takes 3–5 business days. A white-label hotel search widget is also available for go-live in under 2 weeks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the pricing model?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tripsure operates on a net rate pricing model with fortnightly INR settlement via NEFT/RTGS. Contact contact@tripsure.com to discuss commercial terms.",
       },
     },
     {
@@ -153,15 +160,7 @@ const faqSchema = {
       name: "Who operates Tripsure?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tripsure is operated by Polaris Commerce Pvt. Ltd. (CIN: U52291KA2026PTC217236), a subsidiary of Reward360 Global Services Pvt. Ltd., headquartered in Bengaluru, India.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is Tripsure a travel insurance company?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Tripsure (tripsure.com) is a hotel and flight booking platform operated by Polaris Commerce Pvt. Ltd., India. It is completely unrelated to any travel insurance product or company.",
+        text: "Tripsure is operated by Polaris Commerce Pvt. Ltd. (CIN: U52291KA2026PTC217236), headquartered in Bengaluru, India. It is unrelated to any travel insurance product.",
       },
     },
   ],
@@ -170,32 +169,32 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  name: "How to earn loyalty points on hotel and flight bookings with Tripsure",
-  description: "4-step process to book travel and maximise loyalty point earnings on Tripsure",
+  name: "How to search and book hotels on Tripsure",
+  description: "4-step process to find and book the best available hotel rate from 7 global supply networks",
   step: [
     {
       "@type": "HowToStep",
       position: 1,
-      name: "Search hotels or flights",
-      text: "Enter your destination, dates, and number of guests on Tripsure. Browse results with live pricing from 10+ global suppliers.",
+      name: "Search hotels",
+      text: "Enter your destination, dates, and number of guests. Tripsure sends a simultaneous query to all 7 supply networks.",
     },
     {
       "@type": "HowToStep",
       position: 2,
-      name: "Card detected automatically",
-      text: "Enter your payment card. Tripsure detects your card BIN and identifies your tier (e.g. HDFC Infinia 3×, Regalia 2×). Earn rates update automatically on all results.",
+      name: "AI compares all results",
+      text: "All 7 suppliers respond in parallel. The AI layer compares net rates across all sources and returns the best available rate per property in under 800ms.",
     },
     {
       "@type": "HowToStep",
       position: 3,
-      name: "Choose your loyalty programme",
-      text: "Select which programme earns on this booking — InterMiles, Air India One, Marriott Bonvoy, or any of 25+ supported programmes.",
+      name: "Select your hotel",
+      text: "Browse results with confirmed live availability and net pricing from RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, or Smyrooms.",
     },
     {
       "@type": "HowToStep",
       position: 4,
-      name: "Book and earn",
-      text: "Complete payment. Points credit to your chosen loyalty programme. Track your goal progress on your Tripsure dashboard.",
+      name: "Book and confirm",
+      text: "Complete payment. Booking confirmed in under 2 seconds. Voucher issued immediately.",
     },
   ],
 };
@@ -205,7 +204,7 @@ const hotelProductSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Tripsure Hotel Bookings",
-  description": "Book hotels across India and globally. Earn InterMiles, Air India One miles, or Marriott Bonvoy points on every booking.",
+  description: "Book hotels across 10M+ properties from 7 global supply networks at the best available net rate.",
   brand: { "@type": "Brand", name: "Tripsure" },
   offers: {
     "@type": "AggregateOffer",

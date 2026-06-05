@@ -232,7 +232,7 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 md:px-20 py-4 md:py-5">
             {/* Logo */}
             <a href="#top" className="shrink-0 flex items-center min-h-[44px]" aria-label="Tripsure - go to homepage">
-              <img src="/tripsure_logo.svg" alt="Tripsure — India's loyalty-native travel platform" className="h-[32px] w-auto object-contain" />
+              <img src="/tripsure_logo.svg" alt="Tripsure — Best Hotel Prices. AI-Powered Search." className="h-[32px] w-auto object-contain" />
             </a>
 
             {/* Desktop nav */}
@@ -452,18 +452,32 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── LOGO STRIP ──────────────────────────────────────── */}
-        <section className="border-y border-gray-100 py-8 overflow-hidden bg-white">
-          <div className="flex items-center gap-12 animate-scroll-left" style={{ width: 'max-content' }}>
-            {[...logoStrip, ...logoStrip].map((name, i) => (
-              <span
-                key={i}
-                className="text-gray-400 font-semibold text-base md:text-lg tracking-wide whitespace-nowrap select-none"
-                style={{ filter: 'grayscale(1)' }}
-              >
-                {name}
-              </span>
-            ))}
+        {/* ── PARTNER LOGO STRIP ──────────────────────────────── */}
+        <section className="border-y border-gray-100 py-6 overflow-hidden bg-white">
+          <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-widest text-center mb-5">
+            Hotel inventory powered by
+          </p>
+          <div className="flex items-center gap-6 animate-scroll-left px-8" style={{ width: 'max-content' }}>
+            {[...logoStrip, ...logoStrip].map((name, i) => {
+              const slug = name.toLowerCase().replace(/\s+/g, '');
+              return (
+                <div key={i} className="flex items-center justify-center px-4 py-2 bg-white border border-gray-100 rounded-xl"
+                  style={{ minWidth: '90px', height: '44px' }}>
+                  <picture>
+                    <source srcSet={`/assets/logos/partners/${slug}.webp`} type="image/webp" />
+                    <img
+                      src={`/assets/logos/partners/${slug}.svg`}
+                      alt={`${name} logo`}
+                      width="80"
+                      height="28"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ maxWidth: '80px', maxHeight: '28px', width: 'auto', height: 'auto', objectFit: 'contain', filter: 'grayscale(0.2)' }}
+                    />
+                  </picture>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -576,7 +590,7 @@ export default function HomePage() {
         </RevealSection>
 
         {/* ── PRODUCT SECTION ─────────────────────────────────── */}
-        <RevealSection id="product" className="py-20 md:py-28" style={{ backgroundColor: '#F7F3EC' }}>
+        <RevealSection id="how-it-works" className="py-20 md:py-28" style={{ backgroundColor: '#F7F3EC' }}>
           <div className="mx-auto max-w-[1100px] px-4">
             <SectionHeading
               title={productSection.title}
@@ -629,68 +643,48 @@ export default function HomePage() {
           </div>
         </RevealSection>
 
-        {/* ── PARTNERS SECTION ────────────────────────────────── */}
+        {/* ── PARTNERS / SUPPLY NETWORKS ──────────────────────── */}
         <RevealSection id="partners" className="py-20 md:py-28 bg-white">
           <div className="mx-auto max-w-[1100px] px-4">
             <SectionHeading
               title={partnerSection.title}
               description={partnerSection.description}
-              className="mb-6"
+              className="mb-12"
             />
 
-            {/* Badge */}
-            <div className="flex justify-center mb-12">
-              <span className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 text-sm text-[#1A1A2E] bg-white shadow-sm">
-                <span>⚙️</span>
-                {partnerSection.badge}
-              </span>
+            {/* Logo grid */}
+            <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))' }}>
+              {partnerSection.suppliers.map((name) => {
+                const slug = name.toLowerCase().replace(/\s+/g, '');
+                return (
+                  <figure key={name}
+                    className="flex items-center justify-center bg-white rounded-xl transition-all"
+                    style={{ padding: '14px 20px', border: '0.5px solid #E4E7EE', margin: 0 }}
+                    aria-label={`${name} hotel supply partner`}
+                  >
+                    <picture>
+                      <source srcSet={`/assets/logos/partners/${slug}.webp`} type="image/webp" />
+                      <img
+                        src={`/assets/logos/partners/${slug}.svg`}
+                        alt={`${name} logo`}
+                        width="120"
+                        height="40"
+                        loading="lazy"
+                        decoding="async"
+                        style={{ maxWidth: '120px', maxHeight: '36px', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                      />
+                    </picture>
+                  </figure>
+                );
+              })}
             </div>
 
-            {/* Concentric arc visualization */}
-            <div className="relative flex justify-center overflow-hidden" style={{ height: '360px' }}>
-              {/* Arcs */}
-              {[
-                { size: 680, color: '#ffecd8', opacity: '0.8' },
-                { size: 500, color: '#fff5ee', opacity: '0.9' },
-                { size: 340, color: '#fff9f5', opacity: '1' },
-              ].map((arc, i) => (
-                <div
-                  key={i}
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-t-full border-2 border-[#ffecd8]"
-                  style={{
-                    width: arc.size,
-                    height: arc.size / 2,
-                    backgroundColor: arc.color,
-                    opacity: arc.opacity,
-                  }}
-                />
-              ))}
+            <p className="text-center mt-4 text-[#94A3B8]" style={{ fontSize: '11px', maxWidth: '600px', margin: '12px auto 0' }}>
+              Logos and trademarks are property of their respective owners. Tripsure integrates with RateHawk,
+              TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms as hotel supply partners.
+            </p>
 
-              {/* Center logo */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-md border border-gray-100 px-5 py-3 z-10 flex items-center justify-center" style={{ width: '130px', height: '56px' }}>
-                <img src="/tripsure_logo.svg" alt="Tripsure" className="h-[28px] w-auto object-contain" />
-              </div>
-
-              {/* Supplier pills positioned around arcs */}
-              {[
-                { name: 'Yatra', style: { bottom: '200px', left: 'calc(50% - 290px)' } },
-                { name: 'Hotelbeds', style: { bottom: '280px', left: 'calc(50% - 170px)' } },
-                { name: 'Expedia', style: { bottom: '310px', left: 'calc(50% + 30px)' } },
-                { name: 'Ratehawk', style: { bottom: '240px', left: 'calc(50% + 160px)' } },
-                { name: 'Smyrooms', style: { bottom: '150px', left: 'calc(50% + 260px)' } },
-              ].map((supplier) => (
-                <div
-                  key={supplier.name}
-                  className="absolute z-20 bg-white rounded-full shadow-md border border-gray-100 px-4 py-2 text-sm font-medium text-[#1A1A2E] tracking-[-0.01em]"
-                  style={supplier.style as CSSProperties}
-                >
-                  {supplier.name}
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom text */}
-            <p className="mt-8 text-sm text-[#64748B] text-center leading-[1.6] tracking-[-0.01em] max-w-lg mx-auto">
+            <p className="mt-6 text-sm text-[#64748B] text-center leading-[1.6] max-w-lg mx-auto">
               {partnerSection.extraText}
             </p>
           </div>
@@ -825,6 +819,87 @@ export default function HomePage() {
           </div>
         </RevealSection>
 
+        {/* ── AI TECHNOLOGY SECTION ───────────────────────────── */}
+        <RevealSection id="ai-technology" className="py-20 md:py-28 bg-white">
+          <div className="mx-auto max-w-[1100px] px-4">
+            <SectionHeading
+              title="AI-powered hotel search. 7 networks. One result."
+              description="Tripsure queries RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms simultaneously — returning the best available rate and confirmed availability in a single response."
+              className="mb-12"
+            />
+
+            {/* Stat pills */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10 overflow-x-auto pb-2">
+              {[
+                { stat: '< 800ms',  label: 'Median search response' },
+                { stat: '< 1.8s',   label: '95th percentile' },
+                { stat: '10M+',     label: 'Hotel properties' },
+                { stat: '99.95%',   label: 'Uptime SLA' },
+              ].map((p) => (
+                <div key={p.label}
+                  className="inline-flex items-center gap-2 whitespace-nowrap"
+                  style={{ padding: '10px 16px', border: '0.5px solid #D1D6E0', borderRadius: '24px', fontSize: '14px' }}>
+                  <span className="font-bold text-[#0050FF]">{p.stat}</span>
+                  <span className="text-[#64748B]">{p.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Feature pills */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+              {[
+                { icon: '⇄', title: '7-supplier arbitrage', desc: 'All networks queried simultaneously on every search' },
+                { icon: '₹', title: 'Best net rate',        desc: 'Real-time best price across all 7 supply networks' },
+                { icon: '↻', title: 'Live inventory',      desc: 'Rates refreshed every 5 minutes. No stale results.' },
+              ].map((f) => (
+                <div key={f.title} className="flex items-start gap-4 p-6 border border-gray-100 rounded-2xl bg-white" style={{ borderWidth: '0.5px' }}>
+                  <span className="w-9 h-9 rounded-xl bg-[#EEF2FF] flex items-center justify-center text-[#0050FF] font-bold text-base shrink-0">
+                    {f.icon}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-[#1A1A2E] text-sm mb-1">{f.title}</p>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <a href="/technology"
+                className="inline-flex items-center gap-2 text-[#0050FF] font-semibold text-sm hover:underline">
+                See full tech specs →
+              </a>
+            </div>
+
+            {/* Partner logo strip */}
+            <div className="mt-12 pt-8 border-t border-gray-100">
+              <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-widest text-center mb-5">
+                Hotel inventory powered by
+              </p>
+              <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))' }}>
+                {['RateHawk','TBO','Expedia','Agoda','Hotelbeds','DIDA','Smyrooms'].map((name) => {
+                  const slug = name.toLowerCase().replace(/\s+/g, '');
+                  return (
+                    <div key={name} className="flex items-center justify-center bg-white rounded-xl"
+                      style={{ padding: '10px 14px', border: '0.5px solid #E4E7EE', height: '44px' }}>
+                      <picture>
+                        <source srcSet={`/assets/logos/partners/${slug}.webp`} type="image/webp" />
+                        <img src={`/assets/logos/partners/${slug}.svg`}
+                          alt={`${name} logo`} width="80" height="28" loading="lazy" decoding="async"
+                          style={{ maxWidth: '80px', maxHeight: '28px', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                        />
+                      </picture>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="text-center mt-4 text-[#94A3B8]" style={{ fontSize: '11px' }}>
+                Logos and trademarks are property of their respective owners.
+              </p>
+            </div>
+          </div>
+        </RevealSection>
+
         {/* ── CONTACT / CTA ────────────────────────────────────── */}
         <RevealSection id="contact" className="py-16 md:py-20 px-4 md:px-6">
           <div className="mx-auto max-w-[1100px]">
@@ -930,15 +1005,16 @@ export default function HomePage() {
             {/* AEO answer block — picked up as featured snippet / AI answer */}
             <div className="mt-14 rounded-2xl bg-[#F7F3EC] px-8 py-8">
               <h3 className="text-lg font-semibold text-[#1A1A2E] mb-3" itemScope itemType="https://schema.org/Question">
-                <span itemProp="name">How does Tripsure earn loyalty points on hotel bookings?</span>
+                <span itemProp="name">How does Tripsure always find the best hotel rate?</span>
               </h3>
               <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                 <p className="text-sm text-[#64748B] leading-[1.7]" itemProp="text">
-                  When you book a hotel on Tripsure, the platform detects your credit card BIN
-                  (the first 6-8 digits) and automatically applies the correct earn multiplier
-                  for your card tier. HDFC Infinia cardholders earn 3× points; Regalia earns 2×.
-                  Points are credited to your chosen loyalty programme — InterMiles, Air India One,
-                  or Marriott Bonvoy — immediately after checkout. Hotels booking is launching soon.
+                  On every hotel search, Tripsure simultaneously queries all 7 supply networks —
+                  RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms — in parallel.
+                  The AI layer compares net rates across all 7 results and returns the single
+                  lowest available rate per property in under 800ms. No single supplier has the
+                  best rate everywhere; querying all 7 simultaneously is the only way to guarantee
+                  the best available rate on every search.
                 </p>
               </div>
             </div>
@@ -954,7 +1030,7 @@ export default function HomePage() {
               {/* Brand */}
               <div className="max-w-xs">
                 <a href="#top" className="inline-flex items-center mb-4 min-h-[44px]">
-                  <img src="/tripsure_logo.svg" alt="Tripsure — Book Hotels & Flights, Earn Points" className="h-[32px] w-auto object-contain object-left" />
+                  <img src="/tripsure_logo.svg" alt="Tripsure — Best Hotel Prices. AI-Powered Search." className="h-[32px] w-auto object-contain object-left" />
                 </a>
                 <p className="text-sm text-[#64748B] leading-[1.6] tracking-[-0.01em]">
                   {footer.tagline}

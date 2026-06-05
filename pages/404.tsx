@@ -6,7 +6,7 @@ export default function NotFoundPage() {
     <>
       <Head>
         <title>Page Not Found | Tripsure</title>
-        <meta name="description" content="Sorry, this page doesn't exist. Find hotels, flights and loyalty programme info on Tripsure — India's loyalty-native travel platform." />
+        <meta name="description" content="Sorry, this page doesn't exist. Find hotel search, technology info and more on Tripsure — AI-powered hotel technology platform." />
         <meta name="robots" content="noindex, follow" />
       </Head>
 
@@ -29,7 +29,7 @@ export default function NotFoundPage() {
             </h1>
             <p className="text-base text-[#64748B] leading-relaxed mb-8">
               Sorry, we couldn't find that page. You may have followed a broken link or the
-              page may have moved. Head back to Tripsure — India's loyalty-native travel platform.
+              page may have moved. Head back to Tripsure — AI-powered hotel technology platform.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
