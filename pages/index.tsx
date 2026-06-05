@@ -231,7 +231,7 @@ export default function HomePage() {
         <header suppressHydrationWarning className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
           <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 md:px-20 py-4 md:py-5">
             {/* Logo */}
-            <a href="#top" className="shrink-0" aria-label="Tripsure — go to homepage">
+            <a href="#top" className="shrink-0" aria-label="Tripsure - go to homepage">
               <img src="/tripsure_logo.svg" alt="Tripsure — India's loyalty-native travel platform" className="h-[32px] w-auto object-contain" />
             </a>
 
