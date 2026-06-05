@@ -21,9 +21,7 @@ export default function TermsPage() {
         <header className="sticky top-0 z-40 border-b border-gray-100 bg-white/95 backdrop-blur-md">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 md:h-16 md:px-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="bg-white flex items-center overflow-hidden p-[7px] rounded-[6px] h-[40px] border border-gray-100 shadow-sm">
-                <img src="/tripsure_logo.svg" alt="Tripsure" className="h-[26px] w-auto object-contain object-left" />
-              </div>
+              <img src="/tripsure_logo.svg" alt="Tripsure" className="h-[28px] w-auto object-contain" />
             </Link>
             <Link
               href="/"
