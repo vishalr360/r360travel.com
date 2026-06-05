@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(# Check if the user's PNG file is accessible anywhere obvious \\(downloads, tmp, etc.\\) *)",
+      "Read(//Users/vishal/Downloads/**)",
+      "Bash(cp \"/Users/vishal/Downloads/favicon_U_180px.png\" /Users/vishal/Downloads/R360/r360travel.com/public/tripsure-icon.png)",
+      "Bash(cp \"/Users/vishal/Downloads/favicon_U_128px 1 \\(1\\).png\" /Users/vishal/Downloads/R360/r360travel.com/public/tripsure-icon-128.png)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: favicon, SEO, AEO and accessibility improvements *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('Next:', d.get\\('dependencies',{}\\).get\\('next','?'\\)\\); print\\('Scripts:', list\\(d.get\\('scripts',{}\\).keys\\(\\)\\)\\)\")",
+      "Bash(git commit -m 'feat\\(seo\\): robots.txt, sitemaps, llms.txt, security.txt, humans.txt *)",
+      "Bash(git commit -m 'feat\\(perf\\): security headers, redirects, image optimisation in next.config.ts *)",
+      "Bash(git commit -m 'feat\\(seo/aeo\\): comprehensive JSON-LD schemas + full head in _document.tsx *)",
+      "Bash(git commit -m 'feat\\(content\\): B2C positioning, FAQ data, updated meta for SEO/AEO *)",
+      "Bash(git commit -m 'feat\\(seo/a11y\\): FAQ section, hreflang, ARIA landmarks, H1/main/nav, answer blocks *)",
+      "Bash(git commit -m 'feat\\(a11y/perf\\): prefers-reduced-motion, enhanced focus ring, skip-link, CSS containment *)",
+      "Bash(git commit *)",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp: YES'\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\('next:', p.dependencies.next\\); console.log\\('react:', p.dependencies.react\\)\")",
+      "Skill(qa)",
+      "Skill(qa:*)",
+      "Bash(node scripts/fetch-partner-logos.js)",
+      "Bash(python3)",
+      "Bash(which docker || ls /usr/local/bin/docker /Applications/Docker.app/Contents/Resources/bin/docker 2>/dev/null || echo \"Docker Desktop not running or not in PATH\" *)",
+      "Read(//usr/local/bin/**)",
+      "Bash(chmod +x /Users/vishal/Downloads/R360/r360travel.com/deploy.sh)",
+      "Bash(chmod +x /Users/vishal/Downloads/R360/r360travel.com/ec2-setup.sh)"
+    ]
+  }
+}
