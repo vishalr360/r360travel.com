@@ -153,12 +153,12 @@ export default function TechnologyPage() {
                   {
                     icon: '₹',
                     title: 'Best net rate, always',
-                    body: 'No single supplier has the best rate on every property. With 7 networks queried simultaneously, Tripsure\'s pricing engine surfaces the lowest net rate available on every search — without the customer needing to check multiple platforms.',
+                    body: 'No single supplier has the best rate on every property. With 10+ networks queried simultaneously, Tripsure\'s pricing engine surfaces the lowest net rate available on every search — without the customer needing to check multiple platforms.',
                   },
                   {
                     icon: '↻',
                     title: 'Live inventory, not cached guesses',
-                    body: 'Rates and availability are refreshed every 5 minutes across all 7 supplier connections. What you see is what is actually bookable — no phantom availability, no stale prices at checkout.',
+                    body: 'Rates and availability are refreshed every 5 minutes across all 10+ supplier connections. What you see is what is actually bookable — no phantom availability, no stale prices at checkout.',
                   },
                   {
                     icon: '✓',
@@ -278,7 +278,7 @@ export default function TechnologyPage() {
               </h2>
               <p className="text-base text-[#64748B] text-center max-w-[680px] mx-auto mb-10 leading-relaxed">
                 Tripsure aggregates live hotel inventory from RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA,
-                and Smyrooms — covering 10 million+ properties across 190+ countries. All 7 networks are queried
+                and Smyrooms — covering 10 million+ properties across 190+ countries. All 10+ networks are queried
                 in parallel on every search, ensuring the best available rate and real-time availability.
               </p>
 
@@ -297,6 +297,7 @@ export default function TechnologyPage() {
                     }}>
                     <picture>
                       <source srcSet={`/assets/logos/partners/${p.name}.webp`} type="image/webp" />
+              <source srcSet={`/assets/logos/partners/${p.name}.png`}  type="image/png" />
                       <img
                         src={`/assets/logos/partners/${p.name}.svg`}
                         alt={p.alt}

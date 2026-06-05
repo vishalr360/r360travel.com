@@ -465,6 +465,7 @@ export default function HomePage() {
                   style={{ minWidth: '90px', height: '44px' }}>
                   <picture>
                     <source srcSet={`/assets/logos/partners/${slug}.webp`} type="image/webp" />
+                      <source srcSet={`/assets/logos/partners/${slug}.png`}  type="image/png" />
                     <img
                       src={`/assets/logos/partners/${slug}.svg`}
                       alt={`${name} logo`}
@@ -664,6 +665,7 @@ export default function HomePage() {
                   >
                     <picture>
                       <source srcSet={`/assets/logos/partners/${slug}.webp`} type="image/webp" />
+                      <source srcSet={`/assets/logos/partners/${slug}.png`}  type="image/png" />
                       <img
                         src={`/assets/logos/partners/${slug}.svg`}
                         alt={`${name} logo`}
@@ -823,7 +825,7 @@ export default function HomePage() {
         <RevealSection id="ai-technology" className="py-20 md:py-28 bg-white">
           <div className="mx-auto max-w-[1100px] px-4">
             <SectionHeading
-              title="AI-powered hotel search. 7 networks. One result."
+              title="AI-powered hotel search. 10+ networks. One result."
               description="Tripsure queries RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms simultaneously — returning the best available rate and confirmed availability in a single response."
               className="mb-12"
             />
@@ -884,6 +886,7 @@ export default function HomePage() {
                       style={{ padding: '10px 14px', border: '0.5px solid #E4E7EE', height: '44px' }}>
                       <picture>
                         <source srcSet={`/assets/logos/partners/${slug}.webp`} type="image/webp" />
+                      <source srcSet={`/assets/logos/partners/${slug}.png`}  type="image/png" />
                         <img src={`/assets/logos/partners/${slug}.svg`}
                           alt={`${name} logo`} width="80" height="28" loading="lazy" decoding="async"
                           style={{ maxWidth: '80px', maxHeight: '28px', width: 'auto', height: 'auto', objectFit: 'contain' }}
