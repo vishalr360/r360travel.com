@@ -112,7 +112,6 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
       {open && (
         <div
           id={`faq-answer-${index}`}
-          role="region"
           className="px-6 pb-5 text-sm text-[#64748B] leading-[1.7]"
           itemScope
           itemType="https://schema.org/Answer"
@@ -229,7 +228,7 @@ export default function HomePage() {
       <div id="top" className="min-h-screen bg-white text-[#1A1A2E]">
 
         {/* ── NAVBAR ──────────────────────────────────────────── */}
-        <header role="banner" className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
           <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 md:px-20 py-4 md:py-5">
             {/* Logo */}
             <a href="#top" className="shrink-0" aria-label="Tripsure — go to homepage">
@@ -949,7 +948,7 @@ export default function HomePage() {
         </main>{/* ── END MAIN CONTENT ─────────────────────────────── */}
 
         {/* ── FOOTER ──────────────────────────────────────────── */}
-        <footer role="contentinfo" className="bg-white border-t border-gray-100 pt-14 pb-8">
+        <footer className="bg-white border-t border-gray-100 pt-14 pb-8">
           <div className="mx-auto max-w-[1100px] px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-10 md:gap-16 pb-10 border-b border-gray-100">
               {/* Brand */}

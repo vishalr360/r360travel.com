@@ -269,24 +269,7 @@ export default function Document() {
         {/* <meta name="google-site-verification" content="INSERT_GSC_TOKEN" /> */}
         {/* <meta name="msvalidate.01" content="INSERT_BING_TOKEN" /> */}
 
-        {/* ── Google Analytics 4 — G-DSJJ1QQFXY ──────────────── */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-DSJJ1QQFXY"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-DSJJ1QQFXY', {
-                page_path: window.location.pathname,
-                send_page_view: true
-              });
-            `,
-          }}
-        />
+        {/* GA4 is loaded via next/script in _app.tsx (afterInteractive strategy) */}
 
         {/* ── JSON-LD: Organisation + WebSite + TravelAgency + FAQ + HowTo ── */}
         <script
