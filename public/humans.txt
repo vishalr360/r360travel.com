@@ -1,0 +1,19 @@
+/* TEAM */
+Tripsure is built by Polaris Commerce Pvt. Ltd.
+Site: https://tripsure.com
+Contact: contact@tripsure.com
+
+/* TECHNOLOGY */
+Framework: Next.js 16
+Styling: Tailwind CSS v4
+Language: TypeScript
+Deployment: Docker, standalone build
+Fonts: Inter (Google Fonts)
+Icons: Lucide React
+
+/* THANKS */
+Powered by Reward360 Global Services Pvt. Ltd. infrastructure.
+Parent company: Reward360 Global Services Pvt. Ltd.
+
+/* STANDARDS */
+HTML5, WAI-ARIA, Schema.org JSON-LD, Open Graph, Twitter Cards

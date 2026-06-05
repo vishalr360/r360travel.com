@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://tripsure.com/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://tripsure.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripsure.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripsure.com/"/>
+  </url>
+
+  <url>
+    <loc>https://tripsure.com/privacy/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://tripsure.com/terms/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- COMING SOON: Placeholder pages for pre-indexing -->
+  <url>
+    <loc>https://tripsure.com/hotels/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://tripsure.com/flights/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tripsure.com/tripsure-plus/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://tripsure.com/whatsapp-booking/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- HOTEL CITY PAGES: add /hotels/[city]/ entries on hotel launch -->
+  <!-- <url><loc>https://tripsure.com/hotels/mumbai/</loc></url> -->
+  <!-- <url><loc>https://tripsure.com/hotels/delhi/</loc></url> -->
+  <!-- <url><loc>https://tripsure.com/hotels/bangalore/</loc></url> -->
+  <!-- <url><loc>https://tripsure.com/hotels/hyderabad/</loc></url> -->
+  <!-- <url><loc>https://tripsure.com/hotels/goa/</loc></url> -->
+
+  <!-- FLIGHT ROUTE PAGES: add on flight launch -->
+  <!-- <url><loc>https://tripsure.com/flights/mumbai-delhi/</loc></url> -->
+
+</urlset>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://tripsure.com/sitemap.xml</loc>
+    <lastmod>2026-06-05</lastmod>
+  </sitemap>
+  <!-- HOTEL SITEMAP: activate on hotel launch -->
+  <!-- <sitemap><loc>https://tripsure.com/sitemap-hotels.xml</loc></sitemap> -->
+  <!-- FLIGHTS SITEMAP: activate on flight launch -->
+  <!-- <sitemap><loc>https://tripsure.com/sitemap-flights.xml</loc></sitemap> -->
+</sitemapindex>

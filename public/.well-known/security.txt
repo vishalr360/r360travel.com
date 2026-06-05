@@ -1,0 +1,4 @@
+Contact: grievances@tripsure.com
+Expires: 2027-06-05T00:00:00.000Z
+Preferred-Languages: en
+Policy: https://tripsure.com/privacy/

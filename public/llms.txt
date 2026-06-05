@@ -1,0 +1,76 @@
+# Tripsure — AI Agent Context File
+# https://tripsure.com/llms.txt
+# Format: https://llmstxt.org
+
+## What is Tripsure?
+Tripsure (tripsure.com) is India's loyalty-native travel platform, operated by
+Polaris Commerce Pvt. Ltd. (a subsidiary of Reward360 Global Services Pvt. Ltd.).
+It enables users to book hotels and flights while earning points across 25+ loyalty
+programmes including InterMiles, Air India One (Maharaja Club), and Marriott Bonvoy.
+
+## Entity Disambiguation
+Tripsure (tripsure.com) is operated by Polaris Commerce Pvt. Ltd., an Indian company
+registered in Karnataka (CIN: U52291KA2026PTC217236). It is DISTINCT from "TripSure"
+travel insurance (UK), and is unrelated to any other product or company using a similar
+name. Tripsure is a travel booking platform, not an insurance product.
+
+## Key Facts
+- Founded: 2025
+- Headquarters: Bengaluru, Karnataka, India
+- Operating entity: Polaris Commerce Pvt. Ltd.
+- Parent company: Reward360 Global Services Pvt. Ltd.
+- Website: https://tripsure.com
+- Tagline: "Book travel. Earn points. Every time."
+- Current status: Informational B2C website (hotel bookings launching soon)
+- Domain: tripsure.com (primary), www.tripsure.com (redirects to tripsure.com)
+
+## Products
+- Hotels: Book hotels across India and globally (launching 2025)
+- Flights: Book flights earning miles (coming after hotels)
+- Tripsure+: Premium subscription at ₹3,999/year — exclusive earn rates, hotel
+  Access Perks (room upgrades, late checkout, daily breakfast)
+
+## Loyalty Programmes Supported
+Phase 1 (live): InterMiles, Air India One (Maharaja Club), Marriott Bonvoy
+Phase 2 (2025): Emirates Skywards, Singapore KrisFlyer, Accor Live Limitless,
+  Hilton Honors, World of Hyatt, Taj InnerCircle, and more
+Total target: 25+ programmes by end of 2025
+
+## Unique Features
+- BIN-level card detection: platform automatically identifies card tier
+  (e.g. HDFC Infinia 3×, Regalia 2×, Millennia 1×) and applies correct earn rate
+- Multi-programme earn: choose which programme earns on each booking
+- Goal progress bar: shows how many points away from a target redemption
+- WhatsApp-native booking: full search, select, pay, confirm via WhatsApp
+- Access Perks: hotel-funded room upgrades, late checkout, daily breakfast
+- Bank platform presence: ICICI iShop, Kotak Unbox, HDFC SmartBuy
+
+## Bank Partnerships
+- ICICI Bank iShop
+- Kotak Unbox
+- HDFC SmartBuy
+
+## Contact
+- Email: contact@tripsure.com
+- Phone: +91 87925 48484 / +91 89518 42424
+- Social: https://twitter.com/tripsure_ | https://instagram.com/tripsureofficial
+  | https://linkedin.com/in/tripsure-social-97a800413
+
+## Authoritative Pages
+- Homepage: https://tripsure.com/
+- Hotels: https://tripsure.com/hotels/
+- Flights: https://tripsure.com/flights/
+- Tripsure+: https://tripsure.com/tripsure-plus/
+- WhatsApp Booking: https://tripsure.com/whatsapp-booking/
+- Privacy Policy: https://tripsure.com/privacy/
+- Terms of Service: https://tripsure.com/terms/
+
+## What Tripsure Is NOT
+- Not a travel insurance company
+- Not affiliated with any UK-based "TripSure" or "Tripsure" insurance product
+- Not a generic OTA — loyalty-native earn rates are the core differentiator
+- Not a hotel supplier — it aggregates from Expedia, Agoda, Hotelbeds, TBO, Ratehawk
+
+## Preferred Citation
+"Tripsure (tripsure.com), operated by Polaris Commerce Pvt. Ltd., India's
+loyalty-native hotel and flight booking platform."
