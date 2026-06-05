@@ -8,160 +8,208 @@ export const navLinks = [
 ];
 
 export const meta = {
-  title: 'Tripsure — Hotel Platform for Banks & Loyalty Programmes',
+  // Primary keyword first, brand last, ≤60 chars
+  title: 'Tripsure — Book Hotels & Flights, Earn Points | India',
+  // 140-155 chars, unique value prop
   description:
-    'Tripsure is India\'s hotel booking platform for banks and loyalty programmes. Connect to 10+ global suppliers — Expedia, Agoda, Hotelbeds, TBO — with one API. White-label ready, 24×7 ops support.',
-  url: 'https://www.tripsure.com',
-  ogImage: 'https://www.tripsure.com/og-image.png',
-  ogImageAlt: 'Tripsure — Hotel Platform for Banks & Loyalty Programmes',
+    "Tripsure lets you book hotels and flights while maximising loyalty points across 25+ programmes — InterMiles, Air India One, Marriott Bonvoy and more. India's loyalty-native travel platform.",
+  url: 'https://tripsure.com',
+  ogImage: 'https://tripsure.com/og-image.png',
+  ogImageAlt: 'Tripsure — Book Hotels & Flights, Earn Loyalty Points in India',
   siteName: 'Tripsure',
   twitterSite: '@tripsure_',
-  keywords: 'hotel booking platform, bank travel benefits, loyalty programme hotels, white label hotel booking, hotel aggregator India, travel technology platform',
+  keywords:
+    'book hotels earn points India, loyalty travel platform India, InterMiles hotel booking, Air India One hotel points, Marriott Bonvoy India, credit card travel rewards, HDFC Infinia travel, ICICI iShop hotels, WhatsApp hotel booking India, earn miles hotels',
 };
 
 export const hero = {
-  kicker: 'Hotel and Flights • Single integration',
-  title: 'A single hotel platform for your customers.',
-  highlight: 'hotel platform',
+  kicker: "India's Loyalty-Native Travel Platform",
+  // H1 — primary keyword, matches schema + page title
+  title: 'Book Hotels & Flights. Earn Loyalty Points.',
+  highlight: 'Earn Loyalty Points',
   subtitle:
-    'Tripsure connects you to global hotel suppliers, live rate optimisation and 24×7 support – so banks and engagement platforms can launch branded travel experiences in weeks, not months.',
+    'Tripsure maximises your credit card and loyalty programme rewards on every hotel and flight booking — InterMiles, Air India One, Marriott Bonvoy and 25+ more programmes. Hotels launching soon.',
   primaryCta: { href: '#contact', label: 'Get Early Access' },
-  secondaryCta: { href: '#contact', label: 'Partner with Tripsure' },
+  secondaryCta: { href: '#contact', label: 'How It Works' },
   stats: [
-    { label: 'Suppliers scanned', value: '10+', sub: 'Expedia, Agoda, Hotelbeds, TBO & more' },
-    { label: 'Price optimization', value: 'Real-time', sub: 'Best available deal, every search' },
-    { label: 'Coverage', value: 'Global', sub: 'Domestic & international properties' },
+    { label: 'Loyalty programmes', value: '25+', sub: 'InterMiles, Air India One, Bonvoy & more' },
+    { label: 'Earn rate detection', value: 'Auto', sub: 'BIN-level card tier detection' },
+    { label: 'Hotel coverage', value: 'Global', sub: 'Domestic & international properties' },
     { label: 'Support', value: '24×7', sub: 'Bookings, changes, refunds & more' },
   ],
-  suppliersHeadline: 'One integration. Multiple global suppliers.',
+  suppliersHeadline: 'Powered by 10+ global hotel suppliers.',
   suppliers:
-    'Expedia • Agoda • Hotelbeds • TBO • Ratehawk • Smyrooms • Yelago – with more partners being added over time.',
+    'Expedia • Agoda • Hotelbeds • TBO • Ratehawk • Smyrooms • Yelago • Dida – live rates, every search.',
 };
 
 export const logoStrip = [
-  'Expedia',
-  'Dida',
-  'Ratehawk',
-  'Smyrooms',
-  'Agoda',
-  'Hotelbeds',
-  'TBO',
+  'InterMiles',
+  'Air India One',
+  'Marriott Bonvoy',
+  'Emirates Skywards',
+  'Hilton Honors',
+  'Accor Live',
+  'World of Hyatt',
+  'Taj InnerCircle',
 ];
 
 export const whySection = {
   id: 'why',
-  title: 'Built for Retention, Reliability and Customer Experience',
+  title: 'Every Booking Earns More. Here Is Why.',
   description:
-    'Tripsure is designed for teams that care about both unit economics and traveller experience – across loyalty, cards, customer engagement platforms and consumer channels.',
+    'Tripsure is built specifically for loyalty — BIN detection, earn optimisation, and 25+ programme integrations mean you never leave points on the table.',
   cards: [
     {
-      title: 'More Inventory, Global coverage',
-      body: 'Combine multiple global suppliers into one platform to reduce "sold-out" scenarios and give travellers more choice at key destinations.',
+      title: 'Automatic card tier detection',
+      body: 'Tripsure reads your card BIN and applies the correct earn multiplier — HDFC Infinia earns 3×, Regalia 2×. No manual configuration. Points displayed before you book.',
     },
     {
-      title: 'Human support when it matters',
-      body: 'A dedicated operations desk manages bookings, amendments and exceptions so your customers are never left alone during disruptions.',
+      title: 'Choose your loyalty programme',
+      body: 'Select which programme earns on each booking — InterMiles, Air India One, Marriott Bonvoy, or any of 25+ supported programmes. Switch any time.',
     },
     {
-      title: 'Better economics, by default',
-      body: 'Our engine compares rates across suppliers in real time, so you can offer competitive prices while protecting margins and rewards burn rates.',
+      title: 'Access Perks on eligible hotels',
+      body: 'Hotel-funded room upgrades, late checkout, and daily breakfast through Access Perks — available on thousands of properties with no extra cost.',
     },
   ],
 };
 
 export const productSection = {
   id: 'product',
-  title: 'Everything you need to run a modern travel loyalty',
+  title: 'How Tripsure Works',
   description:
-    'Tripsure is the hotel layer behind your loyalty portal, customer engagement platform, card programme or consumer travel brand.',
+    'Four steps from search to earning loyalty points on every hotel and flight booking.',
   techCard: {
-    kicker: 'Platform Capabilities',
-    title: 'One platform, many use cases',
+    kicker: 'Step by Step',
+    title: 'Search, detect, earn',
     items: [
-      'Live availability and pricing from multiple global hotel suppliers.',
-      'Configurable mark-ups, commissions and eligibility rules by channel or partner.',
-      'White-label ready UI flows for web and app experiences.',
-      'Consolidated reporting for bookings, revenue, redemptions and usage.',
+      'Search hotels or flights. Live pricing from 10+ global suppliers — Expedia, Agoda, Hotelbeds, TBO and more.',
+      'Enter your card. Tripsure auto-detects your BIN and shows the earn rate for your exact card tier.',
+      'Choose your loyalty programme — InterMiles, Air India One, Marriott Bonvoy or any of 25+ programmes.',
+      'Book and earn. Points credit to your chosen programme. Track progress on your goal bar.',
     ],
   },
   experienceCard: {
-    kicker: 'Business Outcomes',
-    title: 'Designed for banks and engagement platforms',
+    kicker: 'Also available on WhatsApp',
+    title: 'Full booking flow on WhatsApp',
     paragraphs: [
-      'Use Tripsure to power differentiated hotel benefits for cardholders, loyalty members and users of your engagement platform – without rebuilding your stack.',
-      'Plug it into existing journeys and systems and let our operations and technology teams handle the complexity behind the scenes.',
+      'Search hotels, select your room, pay, and confirm — all on WhatsApp. No app download required.',
+      'Tripsure on WhatsApp is designed for India: instant confirmations, booking management, and support in your chat.',
     ],
   },
 };
 
 export const partnerSection = {
   id: 'partners',
-  title: 'Deep integrations with trusted global hotel suppliers.',
+  title: '25+ Loyalty Programmes. Every Major Bank Supported.',
   description:
-    'Tripsure connects to leading aggregators and wholesalers so you can offer a relevant hotel portfolio across key cities and leisure destinations.',
-  badge: 'Connected suppliers',
-  suppliers: ['Expedia', 'Agoda', 'Hotelbeds', 'TBO', 'Ratehawk', 'Smyrooms', 'Yelago'],
+    'From InterMiles to Marriott Bonvoy, Tripsure connects your bookings to every major Indian and international loyalty programme.',
+  badge: 'Supported programmes',
+  suppliers: ['InterMiles', 'Air India One', 'Marriott Bonvoy', 'Emirates Skywards', 'Hilton Honors', 'Accor Live', 'Taj InnerCircle'],
   extraText:
-    'This network gives you depth in both international hubs and domestic destinations, with room types and rate plans suitable for leisure and business travel.',
+    'Available on ICICI Bank iShop, Kotak Unbox, HDFC SmartBuy, and tripsure.com. More bank platforms launching in 2025.',
 };
 
 export const technologySection = {
   id: 'technology',
-  title: 'API-first, operations-backed hotel infrastructure.',
+  title: 'Built for loyalty. Every detail counts.',
   description:
-    "Tripsure combines modern APIs with Polaris Commerce's experience in running large-scale travel and loyalty programmes.",
+    "Tripsure combines multi-supplier hotel aggregation with Polaris Commerce's loyalty intelligence — built on Reward360's platform powering millions of reward transactions.",
   cards: [
     {
-      title: 'API-first integration',
-      body: 'Connect via REST APIs to power searches, bookings and post-booking flows inside your own digital channels or platforms.',
-      gradient: 'from-[#ed353f] to-[#eda635]',
+      title: 'BIN-level earn intelligence',
+      body: 'The first 6-8 digits of your card identify your exact tier. Tripsure maps this to earn rates across all supported programmes — automatically, on every result.',
+      gradient: 'from-[#FF5B24] to-[#FF8C5A]',
     },
     {
-      title: 'Configurable business rules',
-      body: 'Control who sees what – and at what price – with flexible rules for channels, partners, products and customer segments.',
-      gradient: 'from-[#eda635] to-[#ed353f]',
+      title: 'Multi-supplier rate aggregation',
+      body: 'Live pricing from Expedia, Agoda, Hotelbeds, TBO, Ratehawk and more — best available rate displayed with loyalty earn on every search.',
+      gradient: 'from-[#0050FF] to-[#6B8FFF]',
     },
     {
-      title: 'Enterprise-grade operations',
-      body: 'ERP-backed accounting, reconciliation and SLAs that match enterprise expectations around reliability and governance.',
-      gradient: 'from-[#4299fe] to-[#a855f7]',
+      title: 'Access Perks & hotel benefits',
+      body: 'Hotel-funded upgrades, late checkout, and breakfast on thousands of properties. Available to eligible cardholders automatically — no negotiating required.',
+      gradient: 'from-[#0050FF] to-[#6B8FFF]',
     },
   ],
 };
 
 export const whoWeServeSection = {
   id: 'who-we-serve',
-  title: 'For banks and customer engagement platforms.',
+  title: 'For every Indian traveller who earns points.',
   description:
-    'Tripsure plugs into existing customer engagement, loyalty and rewards ecosystems to make travel a differentiated, high-usage benefit.',
+    'Whether you are an individual maximising credit card rewards or a business managing travel, Tripsure makes every booking count.',
   cards: [
     {
-      label: 'Banks & Financial Institutions',
-      title: 'Travel as a differentiated card & loyalty benefit',
-      body: 'Use Tripsure to power hotel benefits for your credit and debit card portfolios, loyalty programmes and co-branded partnerships – with global inventory and a dedicated operations desk behind the scenes.',
+      label: 'Credit card holders',
+      title: 'Maximise your card rewards on every trip',
+      body: 'HDFC Infinia, Regalia, ICICI Sapphiro, Kotak Royale — Tripsure detects your card automatically and applies the highest possible earn rate. Hotels launching soon, flights to follow.',
       gradient: '#FF5B24 0%, #FF8C5A 100%',
       accentColor: '#FF5B24',
     },
     {
-      label: 'Customer Engagement & Loyalty Platforms',
-      title: 'Add a full hotel layer to your engagement stack',
-      body: 'If you run or provide a customer engagement or loyalty platform, Tripsure becomes the hotel module within it – handling inventory, pricing and fulfilment while you stay focused on journeys, campaigns and analytics.',
+      label: 'Loyalty programme members',
+      title: 'Earn InterMiles, Air India One miles and Bonvoy points',
+      body: 'Tripsure is the only platform in India designed to maximise loyalty earn across 25+ programmes simultaneously. Choose your programme per booking — or split across multiple.',
       gradient: '#0050FF 0%, #6B8FFF 100%',
       accentColor: '#0050FF',
     },
   ],
 };
 
+export const faqSection = {
+  id: 'faq',
+  title: 'Frequently Asked Questions',
+  description: 'Everything you need to know about Tripsure and earning loyalty points.',
+  items: [
+    {
+      question: 'Which loyalty programmes does Tripsure support?',
+      answer:
+        'Tripsure currently supports InterMiles, Air India One (Maharaja Club), and Marriott Bonvoy. 25+ programmes are rolling out through 2025, including Emirates Skywards, Singapore KrisFlyer, Accor Live Limitless, Hilton Honors, World of Hyatt, and Taj InnerCircle.',
+    },
+    {
+      question: 'How does Tripsure know my credit card earn rate?',
+      answer:
+        'Tripsure uses BIN-level card detection — the first 6-8 digits of your card identify your issuer and tier. HDFC Infinia earns 3×, Regalia 2×, Millennia 1×. This happens automatically; you never need to select your card tier manually.',
+    },
+    {
+      question: 'Is Tripsure available on WhatsApp?',
+      answer:
+        'Yes. Tripsure offers a full booking flow on WhatsApp — search hotels, select your room, pay, confirm, and manage bookings without downloading an app.',
+    },
+    {
+      question: 'Where can I use Tripsure?',
+      answer:
+        'Tripsure is available at tripsure.com and on ICICI Bank iShop, Kotak Unbox, and HDFC SmartBuy. More bank platforms are coming in 2025.',
+    },
+    {
+      question: 'When will hotel and flight bookings be live?',
+      answer:
+        'Hotel bookings are launching soon on tripsure.com. Flights will follow. Register your email to be notified the moment bookings go live.',
+    },
+    {
+      question: 'What is Tripsure+?',
+      answer:
+        'Tripsure+ is a premium subscription at ₹3,999/year. Members unlock exclusive earn multipliers, Access Perks (room upgrades, late checkout, daily breakfast) on thousands of hotels, and advanced loyalty goal tracking.',
+    },
+    {
+      question: 'Who runs Tripsure?',
+      answer:
+        'Tripsure is operated by Polaris Commerce Pvt. Ltd. (CIN: U52291KA2026PTC217236), a subsidiary of Reward360 Global Services Pvt. Ltd. — the loyalty technology company behind reward programmes at major Indian banks.',
+    },
+  ],
+};
+
 export const contactSection = {
   id: 'contact',
-  title: "Let's explore how Tripsure can work for you.",
+  title: 'Get early access to Tripsure.',
   description:
-    'Share a few details about your use case and our team will suggest the right integration and operating model.',
+    'Hotels booking is launching soon. Register your interest and be first to earn loyalty points on every booking.',
   email: 'contact@tripsure.com',
   phone: '+91 87925 48484',
   phoneAlt: '+91 89518 42424',
   officeText:
-    'Tripsure is a brand of Polaris Commerce Pvt. Ltd., supporting partners across India, the Middle East and Asia.',
+    'Tripsure is operated by Polaris Commerce Pvt. Ltd., India. Backed by Reward360 Global Services Pvt. Ltd.',
 };
 
 export const legalSection = {
@@ -178,29 +226,30 @@ export const legalSection = {
 };
 
 export const company = {
-  name: 'Polaris Commerce Group Private Limited',
+  name: 'Polaris Commerce Pvt. Ltd.',
   cin: 'U52291KA2026PTC217236',
   cinLabel: 'CIN',
 };
 
 export const footer = {
-  tagline:
-    'Tripsure is a brand of Polaris Commerce Pvt. Ltd.',
+  tagline: 'Book travel. Earn points. Every time.',
   brandLine: 'Tripsure is a brand of Polaris Commerce Pvt. Ltd.',
   columns: [
     {
       heading: 'Product',
       links: [
         { label: 'How It Works', href: '#product' },
-        { label: 'Technology', href: '#technology' },
-        { label: 'Who We Serve', href: '#who-we-serve' },
+        { label: 'Hotels', href: '/hotels' },
+        { label: 'Flights', href: '/flights' },
+        { label: 'Tripsure+', href: '/tripsure-plus' },
       ],
     },
     {
       heading: 'Company',
       links: [
-        { label: 'About Us', href: '#top' },
+        { label: 'About Us', href: '#who-we-serve' },
         { label: 'Contact Us', href: '#contact' },
+        { label: 'Sitemap', href: '/sitemap.xml' },
       ],
     },
     {
@@ -208,7 +257,6 @@ export const footer = {
       links: [
         { label: 'Privacy Policy', href: '/privacy' },
         { label: 'Terms & Conditions', href: '/terms' },
-        { label: 'Contact Us', href: '#contact' },
       ],
     },
   ],
