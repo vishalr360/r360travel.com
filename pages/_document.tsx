@@ -1,206 +1,238 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
+/* ─── JSON-LD Schemas (loaded on every page) ────────────────── */
+
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.tripsure.com/#organization",
-      "name": "Tripsure",
-      "legalName": "Polaris Commerce Group Private Limited",
-      "url": "https://www.tripsure.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.tripsure.com/tripsure_logo.svg",
-        "width": 410,
-        "height": 97
-      },
-      "image": "https://www.tripsure.com/og-image.png",
-      "description": "Tripsure is India's hotel booking platform for banks, loyalty programmes and customer engagement platforms. Connect to 10+ global hotel suppliers with one API integration.",
-      "foundingDate": "2025",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Bengaluru, Karnataka, India"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+91-87925-48484",
-          "contactType": "customer support",
-          "email": "contact@tripsure.com",
-          "availableLanguage": "English"
-        }
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/tripsure-social-97a800413",
-        "https://x.com/tripsure_",
-        "https://www.instagram.com/tripsureofficial"
-      ],
-      "identifier": {
-        "@type": "PropertyValue",
-        "name": "CIN",
-        "value": "U52291KA2026PTC217236"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.tripsure.com/#website",
-      "url": "https://www.tripsure.com",
-      "name": "Tripsure",
-      "description": "Hotel booking platform for banks and loyalty programmes",
-      "publisher": {
-        "@id": "https://www.tripsure.com/#organization"
-      },
-      "inLanguage": "en-IN"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.tripsure.com/#service",
-      "name": "Hotel Booking Platform for Banks & Loyalty Programmes",
-      "provider": {
-        "@id": "https://www.tripsure.com/#organization"
-      },
-      "serviceType": "Travel Technology Platform",
-      "description": "White-label hotel booking infrastructure connecting banks and loyalty platforms to 10+ global hotel suppliers. Features include live rate optimisation, configurable mark-ups, white-label UI flows, and 24×7 operations support.",
-      "areaServed": [
-        { "@type": "Country", "name": "India" },
-        { "@type": "Place", "name": "Middle East" },
-        { "@type": "Place", "name": "Asia" }
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Banks, Financial Institutions, Loyalty Programmes, Customer Engagement Platforms"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Tripsure Platform Features",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Multi-Supplier Hotel Aggregation",
-              "description": "Live availability and pricing from Expedia, Agoda, Hotelbeds, TBO, Ratehawk, Smyrooms, and more"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "API-First Integration",
-              "description": "REST API to power hotel searches, bookings and post-booking flows inside your digital channels"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "White-Label Hotel Portal",
-              "description": "Configurable UI flows for web and app with custom mark-ups, commissions and eligibility rules"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.tripsure.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Tripsure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tripsure is India's hotel booking platform for banks, loyalty programmes and customer engagement platforms. It connects partners to 10+ global hotel suppliers through a single API integration, with live rate optimisation and 24×7 operations support."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which hotel suppliers does Tripsure connect to?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tripsure connects to Expedia, Agoda, Hotelbeds, TBO, Ratehawk, Smyrooms, Yelago, and Dida, with more suppliers being added continuously."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Who is Tripsure designed for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tripsure is designed for banks and financial institutions wanting to add hotel benefits to card portfolios and loyalty programmes, and for customer engagement platforms wanting to add a full hotel layer to their stack."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Tripsure integrate with existing systems?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tripsure provides REST APIs that power hotel searches, bookings and post-booking flows. Banks and engagement platforms can go live in weeks, not months. White-label ready UI flows are available for web and app experiences."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Tripsure available for international hotel bookings?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Tripsure provides global coverage for both domestic and international hotel properties, giving users more choice at key destinations worldwide."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Who operates Tripsure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tripsure is operated by Polaris Commerce Group Private Limited (CIN: U52291KA2026PTC217236), headquartered in Bengaluru, India."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "name": "How to integrate Tripsure into your bank or loyalty platform",
-      "description": "Steps to launch a branded hotel experience on your bank, card or loyalty platform using Tripsure",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Contact Tripsure",
-          "text": "Share your use case with the Tripsure team at contact@tripsure.com to get the right integration model."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "API Integration",
-          "text": "Connect via Tripsure REST APIs to power hotel searches, bookings and post-booking flows inside your digital channels."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Configure Business Rules",
-          "text": "Set up mark-ups, commissions and eligibility rules by channel or partner segment."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Go Live",
-          "text": "Launch your branded hotel experience. Tripsure's operations desk handles bookings, amendments and exceptions 24×7."
-        }
-      ]
-    }
-  ]
+  "@type": "Organization",
+  "@id": "https://tripsure.com/#organization",
+  name: "Tripsure",
+  legalName: "Polaris Commerce Pvt. Ltd.",
+  url: "https://tripsure.com",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://tripsure.com/tripsure_logo.svg",
+    width: 410,
+    height: 97,
+  },
+  image: "https://tripsure.com/og-image.png",
+  description:
+    "India's loyalty-native travel platform. Book hotels and flights and earn points across 25+ loyalty programmes — InterMiles, Air India One, Marriott Bonvoy and more.",
+  foundingDate: "2025",
+  foundingLocation: { "@type": "Place", name: "Bengaluru, Karnataka, India" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-87925-48484",
+    contactType: "customer support",
+    email: "contact@tripsure.com",
+    availableLanguage: ["English", "Hindi"],
+    areaServed: "IN",
+  },
+  sameAs: [
+    "https://twitter.com/tripsure_",
+    "https://instagram.com/tripsureofficial",
+    "https://linkedin.com/in/tripsure-social-97a800413",
+  ],
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Reward360 Global Services Pvt. Ltd.",
+  },
+  identifier: {
+    "@type": "PropertyValue",
+    name: "CIN",
+    value: "U52291KA2026PTC217236",
+  },
 };
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://tripsure.com/#website",
+  name: "Tripsure",
+  url: "https://tripsure.com",
+  description: "India's loyalty-native travel platform — book hotels & flights, earn points",
+  publisher: { "@id": "https://tripsure.com/#organization" },
+  inLanguage: "en-IN",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://tripsure.com/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const travelAgencySchema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "@id": "https://tripsure.com/#travel-agency",
+  name: "Tripsure",
+  url: "https://tripsure.com",
+  description:
+    "Book hotels and flights, earn loyalty points across 25+ programmes. India's loyalty-native OTA.",
+  areaServed: { "@type": "Country", name: "India" },
+  priceRange: "₹",
+  paymentAccepted: "Credit Card, Debit Card, Net Banking, UPI",
+  currenciesAccepted: "INR",
+  openingHours: "Mo-Su 00:00-24:00",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Hotels and Flights",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "LodgingBusiness",
+          name: "Hotel Bookings — Earn Loyalty Points",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Flight",
+          name: "Flight Bookings — Earn Miles",
+        },
+      },
+    ],
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Which loyalty programmes does Tripsure support?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tripsure currently supports InterMiles, Air India One (Maharaja Club), and Marriott Bonvoy, with 25+ programmes launching across 2025 including Emirates Skywards, Singapore KrisFlyer, Accor Live Limitless, Hilton Honors, World of Hyatt, Taj InnerCircle, and more.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does Tripsure detect my credit card tier?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tripsure uses BIN-level card detection — when you enter your card details, the platform automatically identifies your card tier (e.g. HDFC Infinia, Regalia, Millennia) and applies the correct earn multiplier to every hotel and flight result.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Tripsure available on WhatsApp?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Tripsure offers a full booking flow on WhatsApp — search, select, pay, confirm, and manage bookings — with no app download required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is Tripsure available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tripsure is currently available on ICICI Bank iShop, Kotak Unbox, and HDFC SmartBuy bank platforms, and as a standalone website at tripsure.com.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Tripsure+?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tripsure+ is a premium subscription at ₹3,999/year that unlocks exclusive earn rates, hotel Access Perks (room upgrades, late checkout, daily breakfast), and advanced loyalty intelligence features.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who operates Tripsure?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tripsure is operated by Polaris Commerce Pvt. Ltd. (CIN: U52291KA2026PTC217236), a subsidiary of Reward360 Global Services Pvt. Ltd., headquartered in Bengaluru, India.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Tripsure a travel insurance company?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Tripsure (tripsure.com) is a hotel and flight booking platform operated by Polaris Commerce Pvt. Ltd., India. It is completely unrelated to any travel insurance product or company.",
+      },
+    },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to earn loyalty points on hotel and flight bookings with Tripsure",
+  description: "4-step process to book travel and maximise loyalty point earnings on Tripsure",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Search hotels or flights",
+      text: "Enter your destination, dates, and number of guests on Tripsure. Browse results with live pricing from 10+ global suppliers.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Card detected automatically",
+      text: "Enter your payment card. Tripsure detects your card BIN and identifies your tier (e.g. HDFC Infinia 3×, Regalia 2×). Earn rates update automatically on all results.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Choose your loyalty programme",
+      text: "Select which programme earns on this booking — InterMiles, Air India One, Marriott Bonvoy, or any of 25+ supported programmes.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Book and earn",
+      text: "Complete payment. Points credit to your chosen loyalty programme. Track your goal progress on your Tripsure dashboard.",
+    },
+  ],
+};
+
+/* ACTIVATE ON HOTEL LAUNCH:
+const hotelProductSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Tripsure Hotel Bookings",
+  description": "Book hotels across India and globally. Earn InterMiles, Air India One miles, or Marriott Bonvoy points on every booking.",
+  brand: { "@type": "Brand", name: "Tripsure" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "INR",
+    availability: "https://schema.org/InStock",
+    seller: { "@type": "Organization", name: "Tripsure" }
+  }
+};
+*/
+
+const fullSchema = [
+  organizationSchema,
+  webSiteSchema,
+  travelAgencySchema,
+  faqSchema,
+  howToSchema,
+];
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en-IN">
       <Head>
-        {/* Fonts */}
+        {/* ── Charset + Compat ─────────────────────────────────── */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="color-scheme" content="light" />
+
+        {/* ── Fonts ───────────────────────────────────────────── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -208,7 +240,12 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        {/* Favicon — SVG primary, PNG fallback, ICO legacy */}
+        {/* ── DNS Prefetch ─────────────────────────────────────── */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://analytics.google.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+        {/* ── Favicons ─────────────────────────────────────────── */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/tripsure-icon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/tripsure-icon.png" />
@@ -216,22 +253,58 @@ export default function Document() {
         <link rel="apple-touch-icon" sizes="180x180" href="/tripsure-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        {/* Theme */}
+        {/* ── Theme ────────────────────────────────────────────── */}
         <meta name="theme-color" content="#0050FF" />
         <meta name="msapplication-TileColor" content="#0050FF" />
         <meta name="msapplication-TileImage" content="/tripsure-icon.png" />
 
-        {/* Global robots */}
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        {/* ── Global robots ────────────────────────────────────── */}
+        <meta
+          name="robots"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
         <meta name="googlebot" content="index, follow" />
 
-        {/* Structured data — Organisation + Website + Service + FAQ + HowTo */}
+        {/* ── Verification placeholders ────────────────────────── */}
+        {/* <meta name="google-site-verification" content="INSERT_GSC_TOKEN" /> */}
+        {/* <meta name="msvalidate.01" content="INSERT_BING_TOKEN" /> */}
+
+        {/* ── GTM (async, non-blocking) ────────────────────────── */}
+        {/* Replace GTM-XXXXXXX with real container ID */}
+        {/*
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
+          }}
+        />
+        */}
+
+        {/* ── JSON-LD: Organisation + WebSite + TravelAgency + FAQ + HowTo ── */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(fullSchema) }}
         />
       </Head>
       <body className="antialiased">
+        {/* GTM noscript — insert actual GTM-XXXXXXX when ready */}
+        {/*
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0" width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        */}
+
+        {/* Skip-to-content — first focusable element for keyboard users */}
+        <a
+          href="#main-content"
+          className="fixed -top-full left-4 z-[9999] bg-[#0050FF] text-white px-4 py-2 rounded focus:top-4 transition-all text-sm font-medium"
+        >
+          Skip to main content
+        </a>
+
         <Main />
         <NextScript />
       </body>
