@@ -1,35 +1,192 @@
 @import "tailwindcss";
 
 :root {
+  /* ── TripSure brand tokens ──────────────────────────── */
+  --ts-blue:    #0050FF;   /* logo blue */
+  --ts-orange:  #FF5B24;   /* CTA orange */
+  --ts-navy:    #0F2B47;
+  --ts-ink:     #1A1A2E;
+  --ts-cream:   #F7F3EC;
+  --ts-white:   #FFFFFF;
+  --ts-slate:   #64748B;
+  --ts-mist:    #94A3B8;
+
+  /* ── Color · Primary (Indigo-Blue · primary = 500) ─── */
+  --ts-color-primary-50:  #EEF2FF;
+  --ts-color-primary-100: #DDE5FF;
+  --ts-color-primary-200: #BAC9FF;
+  --ts-color-primary-300: #8EA6FF;
+  --ts-color-primary-400: #5578FF;
+  --ts-color-primary-500: #0050FF; /* brand */
+  --ts-color-primary-600: #0040CC;
+  --ts-color-primary-700: #003099;
+  --ts-color-primary-800: #002166;
+  --ts-color-primary-900: #001233;
+  --ts-color-primary-950: #000A1A;
+
+  /* ── Color · Accent (Champagne Gold · premium/loyalty) */
+  --ts-color-accent-50:  #FBF6EC;
+  --ts-color-accent-100: #F6ECD6;
+  --ts-color-accent-200: #ECD8AD;
+  --ts-color-accent-300: #E0C081;
+  --ts-color-accent-400: #D3AD6C;
+  --ts-color-accent-500: #C6A15B;
+  --ts-color-accent-600: #AE8847;
+  --ts-color-accent-700: #8C6C39;
+  --ts-color-accent-800: #6B5230;
+  --ts-color-accent-900: #4D3C26;
+  --ts-color-accent-950: #2C2215;
+
+  /* ── Color · Success ────────────────────────────────── */
+  --ts-color-success-50:  #ECFDF3;
+  --ts-color-success-100: #D1FADF;
+  --ts-color-success-500: #12B76A;
+  --ts-color-success-600: #039855;
+  --ts-color-success-700: #027A48;
+  --ts-color-success-800: #05603A;
+  --ts-color-success-900: #054F31;
+
+  /* ── Color · Warning ────────────────────────────────── */
+  --ts-color-warning-50:  #FFFAEB;
+  --ts-color-warning-500: #F79009;
+  --ts-color-warning-700: #B54708;
+  --ts-color-warning-800: #93370D;
+
+  /* ── Color · Error ──────────────────────────────────── */
+  --ts-color-error-50:  #FEF3F2;
+  --ts-color-error-500: #F04438;
+  --ts-color-error-600: #D92D20;
+  --ts-color-error-700: #B42318;
+
+  /* ── Color · Neutral (cool gray, faint blue cast) ───── */
+  --ts-color-neutral-0:   #FFFFFF;
+  --ts-color-neutral-50:  #F8F9FB;
+  --ts-color-neutral-100: #F1F3F7;
+  --ts-color-neutral-200: #E4E7EE;
+  --ts-color-neutral-300: #D1D6E0;
+  --ts-color-neutral-400: #9CA3B4;
+  --ts-color-neutral-500: #6B7384;
+  --ts-color-neutral-600: #4E5567;
+  --ts-color-neutral-700: #3A4051;
+  --ts-color-neutral-800: #262B38;
+  --ts-color-neutral-900: #181C26;
+  --ts-color-neutral-950: #0D0F16;
+
+  /* ── Semantic aliases (light mode) ─────────────────── */
+  --ts-bg-canvas:        var(--ts-color-neutral-50);
+  --ts-bg-surface:       var(--ts-color-neutral-0);
+  --ts-bg-subtle:        var(--ts-color-neutral-100);
+  --ts-bg-muted:         var(--ts-color-neutral-200);
+  --ts-text-primary-ds:  var(--ts-color-neutral-900);
+  --ts-text-secondary-ds:var(--ts-color-neutral-600);
+  --ts-text-tertiary:    var(--ts-color-neutral-500);
+  --ts-text-disabled:    var(--ts-color-neutral-400);
+  --ts-border-subtle:    var(--ts-color-neutral-200);
+  --ts-border-default:   var(--ts-color-neutral-300);
+  --ts-border-strong:    var(--ts-color-neutral-400);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --ts-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ts-font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --ts-size-display: 72px;
+  --ts-size-h1: 56px;
+  --ts-size-h2: 44px;
+  --ts-size-h3: 32px;
+  --ts-size-h4: 24px;
+  --ts-size-h5: 20px;
+  --ts-size-h6: 18px;
+  --ts-size-body-lg: 18px;
+  --ts-size-body-md: 16px;
+  --ts-size-body-sm: 14px;
+  --ts-size-caption: 12px;
+  --ts-size-label: 13px;
+  --ts-size-button: 15px;
+
+  /* ── Spacing (4px grid · 8px rhythm) ───────────────── */
+  --ts-space-1:  4px;
+  --ts-space-2:  8px;
+  --ts-space-3:  12px;
+  --ts-space-4:  16px;
+  --ts-space-5:  20px;
+  --ts-space-6:  24px;
+  --ts-space-8:  32px;
+  --ts-space-10: 40px;
+  --ts-space-12: 48px;
+  --ts-space-16: 64px;
+  --ts-space-20: 80px;
+  --ts-space-24: 96px;
+
+  /* ── Radius ─────────────────────────────────────────── */
+  --ts-radius-sm:   6px;
+  --ts-radius-md:   10px;
+  --ts-radius-lg:   14px;
+  --ts-radius-xl:   20px;
+  --ts-radius-2xl:  28px;
+  --ts-radius-pill: 999px;
+
+  /* ── Elevation ──────────────────────────────────────── */
+  --ts-shadow-surface:  0 1px 2px rgba(24,28,56,0.05), 0 1px 1px rgba(24,28,56,0.03);
+  --ts-shadow-elevated: 0 2px 4px -1px rgba(24,28,56,0.06), 0 6px 12px -3px rgba(24,28,56,0.08);
+  --ts-shadow-floating: 0 4px 8px -3px rgba(24,28,56,0.06), 0 14px 28px -8px rgba(24,28,56,0.14);
+  --ts-shadow-overlay:  0 6px 14px -4px rgba(24,28,56,0.08), 0 24px 44px -10px rgba(24,28,56,0.18);
+  --ts-shadow-modal:    0 8px 18px -6px rgba(24,28,56,0.10), 0 36px 68px -14px rgba(24,28,56,0.26);
+  --ts-shadow-focus:    0 0 0 4px rgba(0,80,255,0.18);
+  --ts-ring-highlight:  inset 0 1px 0 rgba(255,255,255,0.9);
+  --ts-ring-highlight-soft: inset 0 1px 0 rgba(255,255,255,0.55);
+  --ts-glow-brand:      0 6px 16px -4px rgba(0,80,255,0.28);
+
+  /* ── Glass ──────────────────────────────────────────── */
+  --ts-glass-fill:        rgba(255,255,255,0.62);
+  --ts-glass-fill-strong: rgba(255,255,255,0.78);
+  --ts-blur-md: 16px;
+  --ts-blur-lg: 24px;
+
+  /* ── Motion ─────────────────────────────────────────── */
+  --ts-dur-fast:     150ms;
+  --ts-dur-base:     200ms;
+  --ts-dur-moderate: 300ms;
+  --ts-dur-slow:     400ms;
+  --ts-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ts-ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Z-index ─────────────────────────────────────────── */
+  --ts-z-dropdown: 1000;
+  --ts-z-sticky:   1100;
+  --ts-z-overlay:  1300;
+  --ts-z-modal:    1400;
+  --ts-z-toast:    1600;
+
+  /* ── Legacy aliases (backward compat) ───────────────── */
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  --primary: #1D86FF;
-  --primary-light: #4A9FFF;
-  --primary-dark: #0066DD;
-  --secondary: #011568;
-  --secondary-light: #1a2d8a;
-  --accent: #1D86FF;
-  --accent-light: #4A9FFF;
+  --foreground: var(--ts-ink);
+  --text-primary: var(--ts-ink);
+  --text-secondary: var(--ts-slate);
+  --cta-dark: var(--ts-navy);
+  --cta-red: var(--ts-orange);
+  --cta-orange: var(--ts-orange);
+  --hero-card-bg: #FFF0E8;
+  --section-warm: var(--ts-cream);
+  --stroke-neutral: #f1edff;
+  --border-light: #f1f1f4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
-  --color-secondary: var(--secondary);
-  --color-secondary-light: var(--secondary-light);
-  --color-accent: var(--accent);
-  --color-accent-light: var(--accent-light);
-  --font-sans: 'Noto Sans', sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-cta-dark: var(--cta-dark);
+  --color-cta-red: var(--cta-red);
+  --color-cta-orange: var(--cta-orange);
+  --font-sans: 'Inter', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Animations */
@@ -45,62 +202,23 @@ body {
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes scale-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(29, 134, 255, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(29, 134, 255, 0.6);
-  }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-fade-in-up {
@@ -115,77 +233,33 @@ body {
   animation: scale-in 0.5s ease-out forwards;
 }
 
-.animate-wiggle {
-  animation: wiggle 0.5s ease-in-out;
-}
-
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-.animate-glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
 }
 
 /* Animation delays */
-.animation-delay-100 {
-  animation-delay: 100ms;
-}
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+.animation-delay-600 { animation-delay: 600ms; }
 
-.animation-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animation-delay-300 {
-  animation-delay: 300ms;
-}
-
-.animation-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animation-delay-500 {
-  animation-delay: 500ms;
-}
-
-.animation-delay-600 {
-  animation-delay: 600ms;
-}
-
-/* Initially hide elements that will animate */
 .animate-fade-in-up,
 .animate-fade-in,
 .animate-scale-in {
   opacity: 0;
 }
 
-/* Card hover effects */
+/* Card hover */
 .card-hover {
   transition: all 0.3s ease;
 }
-
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* Icon hover animation */
-.icon-hover {
-  transition: transform 0.3s ease;
-}
-
-.icon-hover:hover {
-  transform: scale(1.1);
-}
-
-/* Gradient text animation */
-.gradient-text-animate {
-  background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
