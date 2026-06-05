@@ -848,7 +848,7 @@ export default function HomePage() {
                     href={footer.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 text-[#64748B] hover:text-[#0050FF] hover:border-[#0050FF] transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 text-[#64748B] hover:text-[#0050FF] hover:border-[#0050FF] transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-4 w-4" />
@@ -857,7 +857,7 @@ export default function HomePage() {
                     href={footer.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 text-[#64748B] hover:text-[#0050FF] hover:border-[#0050FF] transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 text-[#64748B] hover:text-[#0050FF] hover:border-[#0050FF] transition-colors"
                     aria-label="X (Twitter)"
                   >
                     <Twitter className="h-4 w-4" />
@@ -866,7 +866,7 @@ export default function HomePage() {
                     href={footer.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 text-[#64748B] hover:text-[#0050FF] hover:border-[#0050FF] transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 text-[#64748B] hover:text-[#0050FF] hover:border-[#0050FF] transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram className="h-4 w-4" />
@@ -884,7 +884,7 @@ export default function HomePage() {
                     <a
                       key={link.label}
                       href={link.href}
-                      className="text-sm text-[#64748B] hover:text-[#1A1A2E] transition-colors tracking-[-0.01em]"
+                      className="text-sm text-[#64748B] hover:text-[#1A1A2E] transition-colors tracking-[-0.01em] py-1 inline-block min-h-[44px] flex items-center"
                     >
                       {link.label}
                     </a>
