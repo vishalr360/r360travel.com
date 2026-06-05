@@ -30,7 +30,7 @@ export const hero = {
   subtitle:
     'Tripsure maximises your credit card and loyalty programme rewards on every hotel and flight booking — InterMiles, Air India One, Marriott Bonvoy and 25+ more programmes. Hotels launching soon.',
   primaryCta: { href: '#contact', label: 'Get Early Access' },
-  secondaryCta: { href: '#contact', label: 'How It Works' },
+  secondaryCta: { href: '#product', label: 'How It Works' },
   stats: [
     { label: 'Loyalty programmes', value: '25+', sub: 'InterMiles, Air India One, Bonvoy & more' },
     { label: 'Earn rate detection', value: 'Auto', sub: 'BIN-level card tier detection' },
