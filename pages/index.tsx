@@ -145,7 +145,7 @@ function LearnMoreBtn({ href = '#' }: { href?: string }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2 bg-[#393939] text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-700 transition-colors group"
+      className="inline-flex items-center gap-2 bg-[#393939] text-white text-sm font-medium px-5 py-3 rounded-full hover:bg-gray-700 transition-colors group min-h-[44px]"
     >
       Learn More
       <span className="bg-white text-[#393939] rounded-full p-0.5 group-hover:bg-gray-100 transition-colors">
@@ -231,7 +231,7 @@ export default function HomePage() {
         <header suppressHydrationWarning className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
           <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 md:px-20 py-4 md:py-5">
             {/* Logo */}
-            <a href="#top" className="shrink-0" aria-label="Tripsure - go to homepage">
+            <a href="#top" className="shrink-0 flex items-center min-h-[44px]" aria-label="Tripsure - go to homepage">
               <img src="/tripsure_logo.svg" alt="Tripsure — India's loyalty-native travel platform" className="h-[32px] w-auto object-contain" />
             </a>
 
@@ -874,7 +874,7 @@ export default function HomePage() {
                     </div>
                     <a
                       href={`mailto:${contactSection.email}`}
-                      className="text-sm font-semibold text-[#1A1A2E] hover:text-[#0050FF] transition-colors pl-12"
+                      className="text-sm font-semibold text-[#1A1A2E] hover:text-[#0050FF] transition-colors pl-12 min-h-[44px] flex items-center"
                     >
                       {contactSection.email}
                     </a>
@@ -893,13 +893,13 @@ export default function HomePage() {
                     </div>
                     <a
                       href={`tel:${contactSection.phone}`}
-                      className="text-sm font-semibold text-[#1A1A2E] hover:text-[#0050FF] transition-colors pl-12"
+                      className="text-sm font-semibold text-[#1A1A2E] hover:text-[#0050FF] transition-colors pl-12 min-h-[44px] flex items-center"
                     >
                       {contactSection.phone}
                     </a>
                     <a
                       href={`tel:${contactSection.phoneAlt}`}
-                      className="text-sm font-semibold text-[#1A1A2E] hover:text-[#0050FF] transition-colors pl-12"
+                      className="text-sm font-semibold text-[#1A1A2E] hover:text-[#0050FF] transition-colors pl-12 min-h-[44px] flex items-center"
                     >
                       {contactSection.phoneAlt}
                     </a>
@@ -1019,7 +1019,7 @@ export default function HomePage() {
               </div>
               <a
                 href="#top"
-                className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-[#64748B] hover:text-[#1A1A2E] hover:border-gray-400 transition-colors self-start md:self-auto"
+                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-[#64748B] hover:text-[#1A1A2E] hover:border-gray-400 transition-colors self-start md:self-auto"
                 aria-label="Back to top"
               >
                 <ChevronUp className="h-4 w-4" />

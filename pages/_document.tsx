@@ -292,7 +292,7 @@ export default function Document() {
         {/* Skip-to-content — first focusable element for keyboard users */}
         <a
           href="#main-content"
-          className="fixed -top-full left-4 z-[9999] bg-[#0050FF] text-white px-4 py-2 rounded focus:top-4 transition-all text-sm font-medium"
+          className="fixed -top-full left-4 z-[9999] bg-[#0050FF] text-white px-4 py-3 rounded focus:top-4 transition-all text-sm font-medium min-h-[44px] flex items-center"
         >
           Skip to main content
         </a>
