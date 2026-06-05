@@ -25,7 +25,7 @@ export const meta = {
 
 export const hero = {
   kicker: 'AI-Powered Hotel Technology Platform',
-  title: 'Best hotel prices. AI search. 7 networks.',
+  title: 'Best hotel prices. AI search. 10+ networks.',
   highlight: 'AI search',
   subtitle:
     'Tripsure queries RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, and Smyrooms in parallel — returning the lowest available net rate with live inventory in under 800ms. Hotels launching soon.',
@@ -37,7 +37,7 @@ export const hero = {
     { label: 'Hotel properties',  value: '10M+',    sub: '190+ countries, domestic & international' },
     { label: 'Platform uptime',   value: '99.95%',  sub: '17 years of production infrastructure' },
   ],
-  suppliersHeadline: '7 supply networks. One search. Best rate.',
+  suppliersHeadline: '10 supply networks. One search. Best rate.',
   suppliers:
     'RateHawk • TBO • Expedia • Agoda • Hotelbeds • DIDA • Smyrooms — all queried in parallel on every search.',
 };
@@ -56,19 +56,19 @@ export const whySection = {
   id: 'why',
   title: 'Why Tripsure finds better hotel rates',
   description:
-    'Querying 7 supply networks simultaneously means Tripsure always surfaces the lowest available net rate — not cached, not estimated.',
+    'Querying 10+ supply networks simultaneously means Tripsure always surfaces the lowest available net rate — not cached, not estimated.',
   cards: [
     {
       title: 'Best net rate, always',
-      body: 'No single supplier has the best rate on every property. With 7 networks queried in parallel, Tripsure surfaces the lowest available net rate on every search — without checking multiple platforms.',
+      body: 'No single supplier has the best rate on every property. With 10+ networks queried in parallel, Tripsure surfaces the lowest available net rate on every search — without checking multiple platforms.',
     },
     {
       title: 'Live inventory, not cached guesses',
-      body: 'Rates and availability are refreshed every 5 minutes across all 7 supplier connections. What you see is what is actually bookable — no phantom availability, no stale prices at checkout.',
+      body: 'Rates and availability are refreshed every 5 minutes across all 10+ supplier connections. What you see is what is actually bookable — no phantom availability, no stale prices at checkout.',
     },
     {
       title: 'Sub-second response time',
-      body: 'All 7 suppliers are queried simultaneously in parallel. Median search response is under 800ms. 95% of all searches complete in under 1.8 seconds — fast enough for any live booking flow.',
+      body: 'All 10+ suppliers are queried simultaneously in parallel. Median search response is under 800ms. 95% of all searches complete in under 1.8 seconds — fast enough for any live booking flow.',
     },
   ],
 };
@@ -77,23 +77,23 @@ export const productSection = {
   id: 'how-it-works',
   title: 'How Tripsure works',
   description:
-    'Four steps from search to confirmed booking — with the best available rate from 7 supply networks.',
+    'Four steps from search to confirmed booking — with the best available rate from 10+ supply networks.',
   techCard: {
     kicker: 'Step by step',
     title: 'Search, compare, book',
     items: [
-      'Enter your destination and dates. Tripsure sends a simultaneous query to all 7 supply networks.',
-      'All 7 suppliers respond in parallel. The AI layer compares net rates and returns the best result per property.',
+      'Enter your destination and dates. Tripsure sends a simultaneous query to all 10+10 supply networks.',
+      'All 10+ suppliers respond in parallel. The AI layer compares net rates and returns the best result per property.',
       'Select your hotel. Live availability and pricing from RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, or Smyrooms.',
       'Complete payment. Booking confirmed in under 2 seconds. Voucher issued immediately.',
     ],
   },
   experienceCard: {
     kicker: 'For platforms and enterprises',
-    title: 'One API. All 7 networks.',
+    title: 'One API. All 10+ networks.',
     paragraphs: [
-      'Integrate once via REST API and access all 7 supply networks through a single endpoint. Standard integration takes 3–5 business days.',
-      'White-label hotel search widget also available — deploy as an iframe or web component. Full 7-network coverage. Go-live in under 2 weeks.',
+      'Integrate once via REST API and access all 10+ supply networks through a single endpoint. Standard integration takes 3–5 business days.',
+      'White-label hotel search widget also available — deploy as an iframe or web component. Full 10+-network coverage. Go-live in under 2 weeks.',
     ],
   },
 };
@@ -106,7 +106,7 @@ export const partnerSection = {
   badge: 'Hotel supply partners',
   suppliers: ['RateHawk', 'TBO', 'Expedia', 'Agoda', 'Hotelbeds', 'DIDA', 'Smyrooms'],
   extraText:
-    'All 7 networks are queried in parallel on every search, ensuring the best available rate and real-time availability at all times.',
+    'All 10+ networks are queried in parallel on every search, ensuring the best available rate and real-time availability at all times.',
 };
 
 export const technologySection = {

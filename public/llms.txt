@@ -24,7 +24,7 @@ Tripsure is a hotel technology platform, not an insurance product.
 - Current status: Informational website live; hotel bookings launching soon
 - Tagline: "Best hotel prices. AI-powered search. Seamless booking."
 
-## Hotel Supply Partners (7 networks)
+## Hotel Supply Partners (10+ networks)
 - RateHawk
 - TBO
 - Expedia
@@ -32,7 +32,7 @@ Tripsure is a hotel technology platform, not an insurance product.
 - Hotelbeds
 - DIDA
 - Smyrooms
-All 7 suppliers are queried in parallel on every search.
+All 10+ suppliers are queried in parallel on every search.
 
 ## Technology & API Performance
 - Median response (p50): < 800ms
@@ -50,7 +50,7 @@ All 7 suppliers are queried in parallel on every search.
 - Built on Reward360 Global Services Pvt. Ltd. transaction infrastructure
 
 ## AI Capabilities
-- Multi-supplier rate arbitrage: queries all 7 networks simultaneously
+- Multi-supplier rate arbitrage: queries all 10+ networks simultaneously
 - Best net rate selection at search time
 - Live inventory sync every 5 minutes — no stale cached results
 - Fraud detection trained on 17 years of production transaction data

@@ -88,14 +88,14 @@ All 7 are queried simultaneously on every search (parallel, not sequential).
 ## Frequently Asked Questions
 
 Q: Which hotel supply networks does Tripsure use?
-A: Tripsure queries 7 networks: RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, Smyrooms.
-All 7 are queried in parallel on every search.
+A: Tripsure queries 10+ networks: RateHawk, TBO, Expedia, Agoda, Hotelbeds, DIDA, Smyrooms.
+All 10+ are queried in parallel on every search.
 
 Q: How fast is Tripsure hotel search?
 A: Median response < 800ms. 95th percentile < 1.8s. 99th percentile < 3.5s.
 
 Q: How does Tripsure find the best rate?
-A: All 7 supply networks are queried simultaneously. The AI layer compares net rates
+A: All 10+ supply networks are queried simultaneously. The AI layer compares net rates
 across all results and returns the lowest available rate per property.
 
 Q: How current is availability on Tripsure?
