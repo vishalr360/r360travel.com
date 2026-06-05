@@ -12,6 +12,7 @@ import {
   partnerSection,
   technologySection,
   whoWeServeSection,
+  faqSection,
   contactSection,
   company,
   footer,
@@ -173,22 +174,28 @@ export default function HomePage() {
         <meta name="geo.placename" content="Bengaluru, India" />
         <meta name="language" content="English" />
 
+        {/* ── Hreflang ─────────────────────────────────────────── */}
+        <link rel="alternate" hrefLang="en-in" href="https://tripsure.com/" />
+        <link rel="alternate" hrefLang="en" href="https://tripsure.com/" />
+        <link rel="alternate" hrefLang="x-default" href="https://tripsure.com/" />
+
         {/* ── Verification placeholders ────────────────────────── */}
-        {/* <meta name="google-site-verification" content="ADD_YOUR_GSC_TOKEN" /> */}
+        {/* <meta name="google-site-verification" content="INSERT_GSC_TOKEN" /> */}
+        {/* <meta name="msvalidate.01" content="INSERT_BING_TOKEN" /> */}
       </Head>
 
       <div id="top" className="min-h-screen bg-white text-[#1A1A2E]">
 
         {/* ── NAVBAR ──────────────────────────────────────────── */}
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <header role="banner" className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
           <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 md:px-20 py-4 md:py-5">
             {/* Logo */}
-            <a href="#top" className="shrink-0">
-              <img src="/tripsure_logo.svg" alt="Tripsure" className="h-[32px] w-auto object-contain" />
+            <a href="#top" className="shrink-0" aria-label="Tripsure — go to homepage">
+              <img src="/tripsure_logo.svg" alt="Tripsure — India's loyalty-native travel platform" className="h-[32px] w-auto object-contain" />
             </a>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center rounded-full shadow-[0_9px_10px_0_rgba(11,15,27,0.02)]">
+            <nav aria-label="Main navigation" className="hidden lg:flex items-center rounded-full shadow-[0_9px_10px_0_rgba(11,15,27,0.02)]">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -259,8 +266,11 @@ export default function HomePage() {
           )}
         </header>
 
+        {/* ── MAIN CONTENT ─────────────────────────────────────── */}
+        <main id="main-content">
+
         {/* ── HERO ────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-white pt-16 pb-0">
+        <section className="relative overflow-hidden bg-white pt-16 pb-0" aria-labelledby="hero-heading">
           {/* Decorative background lines */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <svg
@@ -308,7 +318,7 @@ export default function HomePage() {
             </div>
 
             {/* Heading */}
-            <h1 className="animate-fade-in-up animation-delay-100 text-5xl md:text-[68px] lg:text-[72px] font-bold leading-[1.1] tracking-[-0.04em] text-[#1A1A2E] max-w-[900px]">
+            <h1 id="hero-heading" className="animate-fade-in-up animation-delay-100 text-5xl md:text-[68px] lg:text-[72px] font-bold leading-[1.1] tracking-[-0.04em] text-[#1A1A2E] max-w-[900px]">
               {(() => {
                 const parts = hero.title.split(hero.highlight);
                 return (
@@ -859,14 +869,74 @@ export default function HomePage() {
           </div>
         </RevealSection>
 
+        {/* ── FAQ SECTION ─────────────────────────────────────── */}
+        <RevealSection id="faq" className="py-20 md:py-28 bg-white" aria-labelledby="faq-heading">
+          <div className="mx-auto max-w-[800px] px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-semibold text-[#1A1A2E] tracking-[-0.03em] leading-[1.15] mb-4">
+                {faqSection.title}
+              </h2>
+              <p className="text-base text-[#64748B] leading-[1.6]">{faqSection.description}</p>
+            </div>
+
+            {/* Answer blocks — optimised for AI snippet extraction */}
+            <div className="flex flex-col gap-4">
+              {faqSection.items.map((item, i) => (
+                <details
+                  key={i}
+                  className="group border border-gray-100 rounded-2xl bg-white overflow-hidden"
+                  itemScope
+                  itemType="https://schema.org/Question"
+                >
+                  <summary
+                    className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-semibold text-[#1A1A2E] text-base leading-[1.4] tracking-[-0.01em] hover:text-[#0050FF] transition-colors"
+                    itemProp="name"
+                  >
+                    {item.question}
+                    <span className="ml-4 shrink-0 w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-[#64748B] group-open:rotate-45 transition-transform">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                    </span>
+                  </summary>
+                  <div
+                    className="px-6 pb-5 text-sm text-[#64748B] leading-[1.7]"
+                    itemScope
+                    itemType="https://schema.org/Answer"
+                    itemProp="acceptedAnswer"
+                  >
+                    <p itemProp="text">{item.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+
+            {/* AEO answer block — picked up as featured snippet / AI answer */}
+            <div className="mt-14 rounded-2xl bg-[#F7F3EC] px-8 py-8">
+              <h3 className="text-lg font-semibold text-[#1A1A2E] mb-3" itemScope itemType="https://schema.org/Question">
+                <span itemProp="name">How does Tripsure earn loyalty points on hotel bookings?</span>
+              </h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p className="text-sm text-[#64748B] leading-[1.7]" itemProp="text">
+                  When you book a hotel on Tripsure, the platform detects your credit card BIN
+                  (the first 6-8 digits) and automatically applies the correct earn multiplier
+                  for your card tier. HDFC Infinia cardholders earn 3× points; Regalia earns 2×.
+                  Points are credited to your chosen loyalty programme — InterMiles, Air India One,
+                  or Marriott Bonvoy — immediately after checkout. Hotels booking is launching soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </RevealSection>
+
+        </main>{/* ── END MAIN CONTENT ─────────────────────────────── */}
+
         {/* ── FOOTER ──────────────────────────────────────────── */}
-        <footer className="bg-white border-t border-gray-100 pt-14 pb-8">
+        <footer role="contentinfo" className="bg-white border-t border-gray-100 pt-14 pb-8">
           <div className="mx-auto max-w-[1100px] px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-10 md:gap-16 pb-10 border-b border-gray-100">
               {/* Brand */}
               <div className="max-w-xs">
                 <a href="#top" className="inline-block mb-4">
-                  <img src="/tripsure_logo.svg" alt="Tripsure" className="h-[42px] w-[157px] object-contain object-left" />
+                  <img src="/tripsure_logo.svg" alt="Tripsure — Book Hotels & Flights, Earn Points" className="h-[42px] w-[157px] object-contain object-left" />
                 </a>
                 <p className="text-sm text-[#64748B] leading-[1.6] tracking-[-0.01em]">
                   {footer.tagline}
