@@ -138,15 +138,43 @@ export default function HomePage() {
   return (
     <>
       <Head>
+        {/* ── Title + Description ─────────────────────────────── */}
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <meta name="author" content="Polaris Commerce Group Private Limited" />
+
+        {/* ── Canonical ───────────────────────────────────────── */}
         <link rel="canonical" href={meta.url} />
+
+        {/* ── Open Graph ──────────────────────────────────────── */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:type" content="website" />
         <meta property="og:url" content={meta.url} />
         <meta property="og:image" content={meta.ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={meta.ogImageAlt} />
         <meta property="og:site_name" content={meta.siteName} />
+        <meta property="og:locale" content="en_IN" />
+
+        {/* ── Twitter Card ────────────────────────────────────── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={meta.twitterSite} />
+        <meta name="twitter:creator" content={meta.twitterSite} />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.ogImage} />
+        <meta name="twitter:image:alt" content={meta.ogImageAlt} />
+
+        {/* ── Geo + Regional ──────────────────────────────────── */}
+        <meta name="geo.region" content="IN-KA" />
+        <meta name="geo.placename" content="Bengaluru, India" />
+        <meta name="language" content="English" />
+
+        {/* ── Verification placeholders ────────────────────────── */}
+        {/* <meta name="google-site-verification" content="ADD_YOUR_GSC_TOKEN" /> */}
       </Head>
 
       <div id="top" className="min-h-screen bg-white text-[#1A1A2E]">

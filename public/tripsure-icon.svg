@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue background -->
+  <rect width="512" height="512" fill="#0055FF"/>
+  <!-- Left orange dot -->
+  <circle cx="166" cy="140" r="58" fill="#FF5F13"/>
+  <!-- Right orange dot -->
+  <circle cx="346" cy="140" r="58" fill="#FF5F13"/>
+  <!-- White U shape: outer arm left → outer bottom → outer arm right → inner right → inner bottom → inner left -->
+  <path fill="white" d="
+    M108,210 L108,374
+    Q108,464 256,464
+    Q404,464 404,374
+    L404,210 L292,210
+    L292,358
+    Q292,390 256,390
+    Q220,390 220,358
+    L220,210 Z
+  "/>
+</svg>

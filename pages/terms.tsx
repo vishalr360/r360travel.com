@@ -5,8 +5,15 @@ export default function TermsPage() {
   return (
     <>
       <Head>
-        <title>Terms of Service – Tripsure</title>
-        <meta name="description" content="Terms of Service for Tripsure by Polaris Commerce Group Private Limited." />
+        <title>Terms of Service — Tripsure by Polaris Commerce Group</title>
+        <meta name="description" content="Terms of Service for Tripsure — the hotel booking platform operated by Polaris Commerce Group Private Limited. Covers bookings, payments, cancellations and user obligations." />
+        <link rel="canonical" href="https://www.tripsure.com/terms" />
+        <meta property="og:title" content="Terms of Service — Tripsure" />
+        <meta property="og:description" content="Tripsure Terms of Service. Operated by Polaris Commerce Group Private Limited (CIN: U52291KA2026PTC217236)." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tripsure.com/terms" />
+        <meta property="og:site_name" content="Tripsure" />
+        <meta name="robots" content="index, follow" />
       </Head>
 
       <div className="min-h-screen bg-white text-[#1A1A2E]">

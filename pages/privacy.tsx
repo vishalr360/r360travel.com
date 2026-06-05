@@ -5,8 +5,15 @@ export default function PrivacyPage() {
   return (
     <>
       <Head>
-        <title>Privacy Policy – Tripsure</title>
-        <meta name="description" content="Privacy policy for Tripsure services by Polaris Commerce Group Private Limited." />
+        <title>Privacy Policy — Tripsure by Polaris Commerce Group</title>
+        <meta name="description" content="Tripsure's privacy policy — how Polaris Commerce Group Private Limited collects, uses and protects your personal data under the DPDP Act 2023." />
+        <link rel="canonical" href="https://www.tripsure.com/privacy" />
+        <meta property="og:title" content="Privacy Policy — Tripsure" />
+        <meta property="og:description" content="How Tripsure handles your personal data. Operated by Polaris Commerce Group Private Limited (CIN: U52291KA2026PTC217236)." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tripsure.com/privacy" />
+        <meta property="og:site_name" content="Tripsure" />
+        <meta name="robots" content="index, follow" />
       </Head>
 
       <div className="min-h-screen bg-white text-[#1A1A2E]">

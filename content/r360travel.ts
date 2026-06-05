@@ -8,12 +8,15 @@ export const navLinks = [
 ];
 
 export const meta = {
-  title: 'Tripsure — Book Hotels & Flights, Earn Points',
+  title: 'Tripsure — Hotel Platform for Banks & Loyalty Programmes',
   description:
-    'Tripsure is India\'s loyalty-native travel platform. Book hotels and flights and earn points across 25+ loyalty programmes including InterMiles, Air India One, and Marriott Bonvoy.',
+    'Tripsure is India\'s hotel booking platform for banks and loyalty programmes. Connect to 10+ global suppliers — Expedia, Agoda, Hotelbeds, TBO — with one API. White-label ready, 24×7 ops support.',
   url: 'https://www.tripsure.com',
-  ogImage: '/tripsure_logo.svg',
+  ogImage: 'https://www.tripsure.com/og-image.png',
+  ogImageAlt: 'Tripsure — Hotel Platform for Banks & Loyalty Programmes',
   siteName: 'Tripsure',
+  twitterSite: '@tripsure_',
+  keywords: 'hotel booking platform, bank travel benefits, loyalty programme hotels, white label hotel booking, hotel aggregator India, travel technology platform',
 };
 
 export const hero = {
