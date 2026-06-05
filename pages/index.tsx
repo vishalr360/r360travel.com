@@ -83,6 +83,48 @@ function GradientText({ children }: { children: ReactNode }) {
   );
 }
 
+/* ─── FAQ accordion item (state-based — avoids <details> hydration mismatch) ── */
+function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="border border-gray-100 rounded-2xl bg-white overflow-hidden"
+      itemScope
+      itemType="https://schema.org/Question"
+    >
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={`faq-answer-${index}`}
+        className="w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[#1A1A2E] text-base leading-[1.4] tracking-[-0.01em] hover:text-[#0050FF] transition-colors"
+        itemProp="name"
+      >
+        {question}
+        <span
+          className="ml-4 shrink-0 w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-[#64748B] transition-transform duration-200"
+          style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}
+          aria-hidden="true"
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+        </span>
+      </button>
+      {open && (
+        <div
+          id={`faq-answer-${index}`}
+          role="region"
+          className="px-6 pb-5 text-sm text-[#64748B] leading-[1.7]"
+          itemScope
+          itemType="https://schema.org/Answer"
+          itemProp="acceptedAnswer"
+        >
+          <p itemProp="text">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ─── Section heading ────────────────────────────────────────── */
 function SectionHeading({ title, description, className = '' }: { title: string; description?: string; className?: string }) {
   return (
@@ -879,33 +921,10 @@ export default function HomePage() {
               <p className="text-base text-[#64748B] leading-[1.6]">{faqSection.description}</p>
             </div>
 
-            {/* Answer blocks — optimised for AI snippet extraction */}
+            {/* Answer blocks — state-controlled accordion (no <details> hydration mismatch) */}
             <div className="flex flex-col gap-4">
               {faqSection.items.map((item, i) => (
-                <details
-                  key={i}
-                  className="group border border-gray-100 rounded-2xl bg-white overflow-hidden"
-                  itemScope
-                  itemType="https://schema.org/Question"
-                >
-                  <summary
-                    className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-semibold text-[#1A1A2E] text-base leading-[1.4] tracking-[-0.01em] hover:text-[#0050FF] transition-colors"
-                    itemProp="name"
-                  >
-                    {item.question}
-                    <span className="ml-4 shrink-0 w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-[#64748B] group-open:rotate-45 transition-transform">
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                    </span>
-                  </summary>
-                  <div
-                    className="px-6 pb-5 text-sm text-[#64748B] leading-[1.7]"
-                    itemScope
-                    itemType="https://schema.org/Answer"
-                    itemProp="acceptedAnswer"
-                  >
-                    <p itemProp="text">{item.answer}</p>
-                  </div>
-                </details>
+                <FAQItem key={i} question={item.question} answer={item.answer} index={i} />
               ))}
             </div>
 
