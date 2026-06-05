@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  r360travel:
+  tripsure:
     build:
       context: .
       dockerfile: Dockerfile
-    image: r360travel:latest
-    container_name: r360travel-app
+    image: tripsure:latest
+    container_name: tripsure-app
     ports:
       - "80:3000"
     environment:
@@ -16,21 +16,25 @@ services:
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/"]
       interval: 30s
-      timeout: 3s
+      timeout: 5s
       retries: 3
       start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
-  # Optional: Nginx reverse proxy for SSL termination
-  # Uncomment if you need HTTPS support
+  # Nginx reverse proxy (uncomment for HTTPS / custom domain)
   # nginx:
   #   image: nginx:alpine
-  #   container_name: r360travel-nginx
+  #   container_name: tripsure-nginx
   #   ports:
   #     - "80:80"
   #     - "443:443"
   #   volumes:
   #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
-  #     - ./certs:/etc/nginx/certs:ro
+  #     - /etc/letsencrypt:/etc/letsencrypt:ro
   #   depends_on:
-  #     - r360travel
+  #     - tripsure
   #   restart: unless-stopped

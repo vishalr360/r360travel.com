@@ -1,138 +1,103 @@
 #!/bin/bash
-
 # ==========================================
-# R360Travel - EC2 Instance Setup Script
-# Run this on a fresh Amazon Linux 2023 or Ubuntu EC2 instance
+# Tripsure — EC2 Instance Setup Script
+# Run once on a fresh Amazon Linux 2023 or Ubuntu server
 # ==========================================
-
 set -e
 
-# Colors for output
-GREEN='\033[0;32m'
-NC='\033[0m'
+GREEN='\033[0;32m'; NC='\033[0m'
+step() { echo -e "${GREEN}==>${NC} $1"; }
 
-print_step() {
-    echo -e "${GREEN}==>${NC} $1"
-}
+[ -f /etc/os-release ] && . /etc/os-release && OS=$NAME
+step "OS detected: ${OS:-unknown}"
 
-# Detect OS
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    OS=$NAME
-fi
-
-print_step "Detected OS: $OS"
-
-# ==========================================
-# Install Docker
-# ==========================================
-install_docker_amazon_linux() {
-    print_step "Installing Docker on Amazon Linux..."
-    sudo yum update -y
-    sudo yum install -y docker
-    sudo systemctl start docker
-    sudo systemctl enable docker
-    sudo usermod -a -G docker ec2-user
+# ── Docker ─────────────────────────────────────────────────────
+install_docker_amazon() {
+  step "Installing Docker (Amazon Linux)..."
+  sudo yum update -y
+  sudo yum install -y docker
+  sudo systemctl start docker
+  sudo systemctl enable docker
+  sudo usermod -aG docker ec2-user
 }
 
 install_docker_ubuntu() {
-    print_step "Installing Docker on Ubuntu..."
-    sudo apt-get update
-    sudo apt-get install -y ca-certificates curl gnupg
-    sudo install -m 0755 -d /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-    sudo apt-get update
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-    sudo usermod -a -G docker ubuntu
+  step "Installing Docker (Ubuntu)..."
+  sudo apt-get update -y
+  sudo apt-get install -y ca-certificates curl gnupg
+  sudo install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+    | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+    https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" \
+    | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+  sudo apt-get update -y
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+  sudo usermod -aG docker ubuntu
 }
 
-# Install based on OS
 case "$OS" in
-    *"Amazon Linux"*)
-        install_docker_amazon_linux
-        ;;
-    *"Ubuntu"*)
-        install_docker_ubuntu
-        ;;
-    *)
-        echo "Unsupported OS. Please install Docker manually."
-        exit 1
-        ;;
+  *"Amazon Linux"*) install_docker_amazon ;;
+  *"Ubuntu"*)       install_docker_ubuntu ;;
+  *) echo "Unsupported OS — install Docker manually"; exit 1 ;;
 esac
 
-# ==========================================
-# Install Docker Compose (standalone)
-# ==========================================
-print_step "Installing Docker Compose..."
-sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# ── Docker Compose standalone ──────────────────────────────────
+step "Installing Docker Compose CLI plugin..."
+COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
+sudo curl -SL "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" \
+  -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# ==========================================
-# Install AWS CLI (for ECR access)
-# ==========================================
-print_step "Installing AWS CLI..."
-if ! command -v aws &> /dev/null; then
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    sudo ./aws/install
-    rm -rf aws awscliv2.zip
+# ── AWS CLI ────────────────────────────────────────────────────
+if ! command -v aws &>/dev/null; then
+  step "Installing AWS CLI..."
+  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip
+  unzip -q /tmp/awscliv2.zip -d /tmp
+  sudo /tmp/aws/install
+  rm -rf /tmp/awscliv2.zip /tmp/aws
 fi
 
-# ==========================================
-# Configure firewall (if using UFW on Ubuntu)
-# ==========================================
-if command -v ufw &> /dev/null; then
-    print_step "Configuring firewall..."
-    sudo ufw allow 80/tcp
-    sudo ufw allow 443/tcp
-    sudo ufw allow 22/tcp
+# ── Firewall ───────────────────────────────────────────────────
+if command -v ufw &>/dev/null; then
+  step "Opening ports 22, 80, 443..."
+  sudo ufw allow 22/tcp
+  sudo ufw allow 80/tcp
+  sudo ufw allow 443/tcp
 fi
 
-# ==========================================
-# Create app directory
-# ==========================================
-print_step "Creating application directory..."
-sudo mkdir -p /opt/r360travel
-sudo chown $(whoami):$(whoami) /opt/r360travel
+# ── App directory ──────────────────────────────────────────────
+step "Creating /opt/tripsure..."
+sudo mkdir -p /opt/tripsure
+sudo chown "$(whoami):$(whoami)" /opt/tripsure
 
-# ==========================================
-# Print completion message
-# ==========================================
+# ── Done ───────────────────────────────────────────────────────
 echo ""
 echo "=========================================="
-echo "EC2 Setup Complete!"
+echo "  EC2 Setup Complete!"
 echo "=========================================="
 echo ""
-echo "IMPORTANT: Log out and log back in for Docker group changes to take effect."
+echo "IMPORTANT: Log out and back in so Docker group change takes effect."
 echo ""
 echo "Next steps:"
 echo ""
-echo "1. Configure AWS credentials (if using ECR):"
-echo "   aws configure"
+echo "  1. Configure AWS credentials (for ECR):"
+echo "     aws configure"
 echo ""
-echo "2. Pull and run your Docker image:"
+echo "  2a. Deploy from ECR:"
+echo "     export AWS_ACCOUNT_ID=123456789012"
+echo "     aws ecr get-login-password --region ap-south-1 \\"
+echo "       | docker login --username AWS --password-stdin \${AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com"
+echo "     docker pull \${AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/tripsure:latest"
+echo "     docker run -d --name tripsure-app -p 80:3000 --restart unless-stopped \\"
+echo "       \${AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/tripsure:latest"
 echo ""
-echo "   # Option A: From ECR"
-echo "   aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin YOUR_ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com"
-echo "   docker pull YOUR_ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/r360travel:latest"
-echo "   docker run -d --name r360travel-app -p 80:3000 --restart unless-stopped YOUR_ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/r360travel:latest"
+echo "  2b. Deploy from tar (after SCP):"
+echo "     gunzip -c tripsure-*.tar.gz | docker load"
+echo "     docker run -d --name tripsure-app -p 80:3000 --restart unless-stopped tripsure:latest"
 echo ""
-echo "   # Option B: From Docker Hub"
-echo "   docker pull your-username/r360travel:latest"
-echo "   docker run -d --name r360travel-app -p 80:3000 --restart unless-stopped your-username/r360travel:latest"
-echo ""
-echo "   # Option C: From tar file (after SCP transfer)"
-echo "   gunzip -c r360travel-image.tar.gz | docker load"
-echo "   docker run -d --name r360travel-app -p 80:3000 --restart unless-stopped r360travel:latest"
-echo ""
-echo "3. Verify the app is running:"
-echo "   docker ps"
-echo "   curl http://localhost"
+echo "  3. Verify:"
+echo "     docker ps"
+echo "     curl http://localhost"
 echo ""
