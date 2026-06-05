@@ -1,29 +1,49 @@
 {
   "name": "Tripsure",
   "short_name": "Tripsure",
-  "description": "Hotel booking platform for banks and loyalty programmes.",
+  "description": "Book hotels & flights, earn loyalty points. India's loyalty-native travel platform.",
   "start_url": "/",
-  "display": "browser",
-  "theme_color": "#0050FF",
+  "display": "standalone",
   "background_color": "#ffffff",
+  "theme_color": "#0050FF",
+  "orientation": "any",
+  "lang": "en-IN",
+  "categories": ["travel", "finance", "lifestyle"],
+  "dir": "ltr",
   "icons": [
     {
       "src": "/tripsure-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/tripsure-icon.png",
-      "sizes": "192x192",
+      "src": "/tripsure-icon-128.png",
+      "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "src": "/tripsure-icon.png",
-      "sizes": "512x512",
+      "sizes": "720x720",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book a Hotel",
+      "short_name": "Hotels",
+      "description": "Search and book hotels, earn loyalty points",
+      "url": "/hotels",
+      "icons": [{ "src": "/tripsure-icon-128.png", "sizes": "128x128" }]
+    },
+    {
+      "name": "Book a Flight",
+      "short_name": "Flights",
+      "description": "Search and book flights, earn miles",
+      "url": "/flights",
+      "icons": [{ "src": "/tripsure-icon-128.png", "sizes": "128x128" }]
     }
   ]
 }
